@@ -6,4 +6,6 @@ We are given an image ISO for VMV(64 bits). In order to make the following proje
 
 By entering the machine we see:
 
-	% ssh level00@192.168.99.10
+	% ssh level00@192.168.99.106 -p 4242
+		   _____                      _____               _
+	  / ____|                    / ____|          
