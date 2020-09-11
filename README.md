@@ -19,4 +19,9 @@ By entering the machine we see:
           192.168.99.106
 	level00@192.168.99.106's password: level00
 
-A
+And:
+
+
+	% ssh level0@192.168.99.103 -p 4242
+	  _____       _       ______    _ _
+	 |  __ \     (_)     
