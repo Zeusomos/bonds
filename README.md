@@ -32,4 +32,7 @@ And:
 
                  Good luck & Have fun
 
-  	To start, ssh with level0/level0 on 192
+  	To start, ssh with level0/level0 on 192.168.99.103:4242
+	level0@192.168.99.103's password: level0
+
+It is more convenient to use local console and connect via SSH. In th
