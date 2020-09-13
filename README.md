@@ -36,4 +36,4 @@ And:
 	level0@192.168.99.103's password: level0
 
 It is more convenient to use local console and connect via SSH. In the projects we use different utils, create files a bit and so on.\
-Our main goal is to use everythi
+Our main goal is to use everything given in the ISO to find exploitations for the current user and reach next user password file or user untill we c
