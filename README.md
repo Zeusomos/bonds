@@ -47,4 +47,6 @@ Our main goal is to use everything given in the ISO to find exploitations for th
 	level06:x:2006:2006::/home/user/level06:/bin/bash
 	level07:x:2007:2007::/home/user/level07:/bin/bash
 	level08:x:2008:2008::/home/user/level08:/bin/bash
-	level09:
+	level09:x:2009:2009::/home/user/level09:/bin/bash
+	level10:x:2010:2010::/home/user/level10:/bin/bash
+	level11:x:2011:2011::
