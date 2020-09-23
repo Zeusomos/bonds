@@ -56,4 +56,5 @@ Our main goal is to use everything given in the ISO to find exploitations for th
 	flag00:x:3000:3000::/home/flag/flag00:/bin/bash
 	flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
 	flag02:x:3002:3002::/home/flag/flag02:/bin/bash
-	fla
+	flag03:x:3003:3003::/home/flag/flag03:/bin/bash
+	flag04:x:3004:3004::/home/flag/flag04:/bin/bash
