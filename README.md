@@ -78,4 +78,6 @@ And:
 	level4:x:2025:2025::/home/user/level4:/bin/bash
 	level5:x:2045:2045::/home/user/level5:/bin/bash
 	level6:x:2064:2064::/home/user/level6:/bin/bash
-	level7:x:2024:2024::/home/user/level7:/bi
+	level7:x:2024:2024::/home/user/level7:/bin/bash
+	level8:x:2008:2008::/home/user/level8:/bin/bash
+	level9:x:2009:2009::/home/
