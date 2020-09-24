@@ -74,4 +74,6 @@ And:
 	level0:x:2020:2020::/home/user/level0:/bin/bash
 	level1:x:2030:2030::/home/user/level1:/bin/bash
 	level2:x:2021:2021::/home/user/level2:/bin/bash
-	level3:x:2022:2022::/home
+	level3:x:2022:2022::/home/user/level3:/bin/bash
+	level4:x:2025:2025::/home/user/level4:/bin/bash
+	level5:x:2045:2045::/home/use
