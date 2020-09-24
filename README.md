@@ -72,4 +72,6 @@ Our main goal is to use everything given in the ISO to find exploitations for th
 And:
 
 	level0:x:2020:2020::/home/user/level0:/bin/bash
-	level
+	level1:x:2030:2030::/home/user/level1:/bin/bash
+	level2:x:2021:2021::/home/user/level2:/bin/bash
+	level3:x:2022:2022::/home
