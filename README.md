@@ -76,4 +76,6 @@ And:
 	level2:x:2021:2021::/home/user/level2:/bin/bash
 	level3:x:2022:2022::/home/user/level3:/bin/bash
 	level4:x:2025:2025::/home/user/level4:/bin/bash
-	level5:x:2045:2045::/home/use
+	level5:x:2045:2045::/home/user/level5:/bin/bash
+	level6:x:2064:2064::/home/user/level6:/bin/bash
+	level7:x:2024:2024::/home/user/level7:/bi
