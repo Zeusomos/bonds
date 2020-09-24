@@ -64,4 +64,6 @@ Our main goal is to use everything given in the ISO to find exploitations for th
 	flag08:x:3008:3008::/home/flag/flag08:/bin/bash
 	flag09:x:3009:3009::/home/flag/flag09:/bin/bash
 	flag10:x:3010:3010::/home/flag/flag10:/bin/bash
-	flag11:x:3011:3011::/home/flag/
+	flag11:x:3011:3011::/home/flag/flag11:/bin/bash
+	flag12:x:3012:3012::/home/flag/flag12:/bin/bash
+	flag13:x:3013:3013::/home/flag/flag13:/
