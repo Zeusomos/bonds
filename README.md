@@ -83,4 +83,6 @@ And:
 	level9:x:2009:2009::/home/user/level9:/bin/bash
 	bonus0:x:2010:2010::/home/user/bonus0:/bin/bash
 	bonus1:x:2011:2011::/home/user/bonus1:/bin/bash
-	
+	bonus2:x:2012:2012::/home/user/bonus2:/bin/bash
+	bonus3:x:2013:2013::/home/user/bonus3:/bin/bash
+	e
