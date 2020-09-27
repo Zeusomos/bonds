@@ -85,4 +85,7 @@ And:
 	bonus1:x:2011:2011::/home/user/bonus1:/bin/bash
 	bonus2:x:2012:2012::/home/user/bonus2:/bin/bash
 	bonus3:x:2013:2013::/home/user/bonus3:/bin/bash
-	e
+	end:x:2014:2014::/home/user/end:/bin/bash
+
+# SnowCrash
+In SnowCrash we use different posibilities and exploitations:
