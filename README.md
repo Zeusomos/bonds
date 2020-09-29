@@ -88,4 +88,4 @@ And:
 	end:x:2014:2014::/home/user/end:/bin/bash
 
 # SnowCrash
-In SnowCrash we use different posibilities and exploitations:
+In SnowCrash we use different posibilities and exploitations: web-servers, Linux system files and utils, outdated ciphers and so on. For each level we need to find password to
