@@ -89,4 +89,7 @@ And:
 
 # SnowCrash
 In SnowCrash we use different posibilities and exploitations: web-servers, Linux system files and utils, outdated ciphers and so on. For each level we need to find password to the user flag from which we can execute programm getflag that gives password to the next level.\
-Is done like 
+Is done like quest, very interesting!
+
+# Rainfall
+In RainFall we mostly deal with reverse engineering: use `objdu
