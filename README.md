@@ -92,4 +92,5 @@ In SnowCrash we use different posibilities and exploitations: web-servers, Linux
 Is done like quest, very interesting!
 
 # Rainfall
-In RainFall we mostly deal with reverse engineering: use `objdump`, `gdb`, write code in order to find exploitations there. Each binary we have has a SUID bit and is created by the next user whose password we are trying to find. We try to execute `system("/bin/bash")` or other opportunitie
+In RainFall we mostly deal with reverse engineering: use `objdump`, `gdb`, write code in order to find exploitations there. Each binary we have has a SUID bit and is created by the next user whose password we are trying to find. We try to execute `system("/bin/bash")` or other opportunities to get terminal under user creating the binary.\
+As for the ISO: it is much simplier than default Linux system no
