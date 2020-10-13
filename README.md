@@ -94,4 +94,6 @@ Is done like quest, very interesting!
 # Rainfall
 In RainFall we mostly deal with reverse engineering: use `objdump`, `gdb`, write code in order to find exploitations there. Each binary we have has a SUID bit and is created by the next user whose password we are trying to find. We try to execute `system("/bin/bash")` or other opportunities to get terminal under user creating the binary.\
 As for the ISO: it is much simplier than default Linux system nowadays. We have many settings turned off that is why exploitations are possible:
-* GCC stack protector supp
+* GCC stack protector support:            Enabled
+* Strict user copy checks:                Disabled
+* Restrict /dev/mem access:               Enabl
