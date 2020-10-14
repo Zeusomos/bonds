@@ -102,4 +102,7 @@ As for the ISO: it is much simplier than default Linux system nowadays. We have 
 * Kernel Heap Hardening: No KERNHEAP
 * No RELRO
 * System-wide ASLR (kernel.randomize_va_space): Off (Setting: 0)
-* No PIE (position-indep
+* No PIE (position-independent executable)
+
+That means:
+* A programmer who mistakenly leaves open the possibility of overrunning a buffer on a functi
