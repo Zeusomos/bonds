@@ -99,4 +99,7 @@ As for the ISO: it is much simplier than default Linux system nowadays. We have 
 * Restrict /dev/mem access:               Enabled
 * Restrict /dev/kmem access:              Enabled
 * grsecurity / PaX: No GRKERNSEC
-* Kernel Heap Hardening: No 
+* Kernel Heap Hardening: No KERNHEAP
+* No RELRO
+* System-wide ASLR (kernel.randomize_va_space): Off (Setting: 0)
+* No PIE (position-indep
