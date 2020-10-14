@@ -96,4 +96,7 @@ In RainFall we mostly deal with reverse engineering: use `objdump`, `gdb`, write
 As for the ISO: it is much simplier than default Linux system nowadays. We have many settings turned off that is why exploitations are possible:
 * GCC stack protector support:            Enabled
 * Strict user copy checks:                Disabled
-* Restrict /dev/mem access:               Enabl
+* Restrict /dev/mem access:               Enabled
+* Restrict /dev/kmem access:              Enabled
+* grsecurity / PaX: No GRKERNSEC
+* Kernel Heap Hardening: No 
