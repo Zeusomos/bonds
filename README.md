@@ -113,4 +113,6 @@ That means:
 
 	level0@RainFall:~$ lscpu
 	Architecture:          i686 // i686 = 32-bit Intel x86 arch
-	
+	CPU op-mode(s):        32-bit, 64-bit
+	Byte Order:            Little Endian
+	CPU(s):                1
