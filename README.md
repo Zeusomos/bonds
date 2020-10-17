@@ -109,4 +109,8 @@ That means:
 * There is no prevention from buffer overflows that might corrupt the stack (or other data locations).
 * The Linux kernel's free list pointer obfuscation has weaknesses, which in the right conditions, allows an attacker to perform free list poisoning.
 * There are no changes for object addresses - always at the same place.
-* Memory is allocated without difficult
+* Memory is allocated without difficult algorithms.
+
+	level0@RainFall:~$ lscpu
+	Architecture:          i686 // i686 = 32-bit Intel x86 arch
+	
