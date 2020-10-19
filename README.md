@@ -116,3 +116,8 @@ That means:
 	CPU op-mode(s):        32-bit, 64-bit
 	Byte Order:            Little Endian
 	CPU(s):                1
+	On-line CPU(s) list:   0
+	Thread(s) per core:    1
+	Core(s) per socket:    1
+	Socket(s):             1
+	Ven
