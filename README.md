@@ -124,4 +124,7 @@ That means:
 	CPU family:            6
 	Model:                 158
 	Stepping:              9
-	CPU MHz:         
+	CPU MHz:               3407.998
+	BogoMIPS:              6815.99
+	Hypervisor vendor:     KVM
+	Virtualization typ
