@@ -120,4 +120,8 @@ That means:
 	Thread(s) per core:    1
 	Core(s) per socket:    1
 	Socket(s):             1
-	Ven
+	Vendor ID:             GenuineIntel
+	CPU family:            6
+	Model:                 158
+	Stepping:              9
+	CPU MHz:         
