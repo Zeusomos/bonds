@@ -135,4 +135,6 @@ That means:
 
 This project was a bit more difficult but was interesting.
 Links:
-* https://ma
+* https://man7.org/linux/man-pages/man7/kernel_lockdown.7.html 
+* https://cxsecurity.com/issue/WLB-2013100009 
+* h
