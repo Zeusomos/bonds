@@ -131,4 +131,8 @@ That means:
 	L1d cache:             32K
 	L1i cache:             32K
 	L2 cache:              256K
-	L
+	L3 cache:              6144K
+
+This project was a bit more difficult but was interesting.
+Links:
+* https://ma
