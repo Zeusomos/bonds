@@ -127,4 +127,8 @@ That means:
 	CPU MHz:               3407.998
 	BogoMIPS:              6815.99
 	Hypervisor vendor:     KVM
-	Virtualization typ
+	Virtualization type:   full
+	L1d cache:             32K
+	L1i cache:             32K
+	L2 cache:              256K
+	L
