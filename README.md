@@ -137,4 +137,4 @@ This project was a bit more difficult but was interesting.
 Links:
 * https://man7.org/linux/man-pages/man7/kernel_lockdown.7.html 
 * https://cxsecurity.com/issue/WLB-2013100009 
-* h
+* https://repo.zenk-security.com/Magazine%20E-book/Hacking-%20The%20Art%20of%20Exploitation%20(2nd%20ed.%202008)%2
