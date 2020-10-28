@@ -10,4 +10,14 @@ char	*p(char *buf, char *string)
 	puts(string);
 	read(0, read_buf, 4096);
 	*strchr(read_buf, '\n') = '\0';
-	strncpy(buf, read_buf
+	strncpy(buf, read_buf, 20);
+}
+
+char	*pp(char *buffer)
+{
+	char	*first;
+	char	*second;
+	int		len;
+
+	p(first, " - ");
+	p(secon
