@@ -5,4 +5,9 @@
 
 char	*p(char *buf, char *string)
 {
-	char
+	char	read_buf[4096];
+
+	puts(string);
+	read(0, read_buf, 4096);
+	*strchr(read_buf, '\n') = '\0';
+	strncpy(buf, read_buf
