@@ -24,4 +24,14 @@ char	*pp(char *buffer)
 	strcpy(buffer, first);
 	len = strlen(buffer);
 	buffer[len] = ' ';
-	buffer[len +
+	buffer[len + 1] = '\0';
+	strcat(buffer, second);
+}
+
+int	main(void)
+{
+	char buf[42];
+
+	pp(buf);
+	puts(buf);
+	return 
