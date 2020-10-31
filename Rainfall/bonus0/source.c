@@ -20,4 +20,8 @@ char	*pp(char *buffer)
 	int		len;
 
 	p(first, " - ");
-	p(secon
+	p(second, " - ");
+	strcpy(buffer, first);
+	len = strlen(buffer);
+	buffer[len] = ' ';
+	buffer[len +
