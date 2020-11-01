@@ -34,4 +34,5 @@ int	main(void)
 
 	pp(buf);
 	puts(buf);
-	return 
+	return (0);
+}
