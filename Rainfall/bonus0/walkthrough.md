@@ -5,4 +5,6 @@ By objdumping the binary we see 3 functions main, pp and p:
 
 	bonus0@RainFall:~$ objdump -D -M intel-mnemonic bonus0 > /tmp/dump_bon0
 
-Why do we do objdump first? 
+Why do we do objdump first? Maybe in this exercise a function exists but is not used so we need to see all the functions.
+
+# Code wr
