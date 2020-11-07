@@ -16,3 +16,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x080485a4 <+0>:	push   ebp
 	   0x080485a5 <+1>:	mov    ebp,esp
 	   0x080485a7 <+3>:	and    esp,0xfffffff0
+	   0x080485aa <+6>:	sub    esp,0x40
+	   0x080485ad <+9>:	lea    eax,[esp+0x16]  		;buffer to pp
+	   0x080485b1 <+13>:	mov    DWORD
