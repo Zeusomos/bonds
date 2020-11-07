@@ -7,4 +7,9 @@ By objdumping the binary we see 3 functions main, pp and p:
 
 Why do we do objdump first? Maybe in this exercise a function exists but is not used so we need to see all the functions.
 
-# Code wr
+# Code writing
+
+We start to work with gdb in Intel syntax (set disassembly-flavor intel):
+
+	(gdb) disass main
+	Dump of assemb
