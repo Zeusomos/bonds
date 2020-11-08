@@ -25,4 +25,8 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x080485c0 <+28>:	call   0x80483b0 <puts@plt>	;call puts
 	   0x080485c5 <+33>:	mov    eax,0x0
 	   0x080485ca <+38>:	leave
-	   0
+	   0x080485cb <+39>:	ret
+	
+We have buffer here, let's count its size:
+
+	Breakpoint 2, 0x080485b4 in main (
