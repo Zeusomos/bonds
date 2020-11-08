@@ -20,4 +20,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x080485ad <+9>:	lea    eax,[esp+0x16]  		;buffer to pp
 	   0x080485b1 <+13>:	mov    DWORD PTR [esp],eax 	;argument to pp
 	   0x080485b4 <+16>:	call   0x804851e <pp>		;call pp
-	   0x080485b9 <+21>:	lea    ea
+	   0x080485b9 <+21>:	lea    eax,[esp+0x16]		;argument to puts
+	   0x080485bd <+25>:	mov    DWORD PTR [esp],eax	;argument to puts
+	   0x080485c0 <+28>:	call   
