@@ -29,4 +29,7 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	
 We have buffer here, let's count its size:
 
-	Breakpoint 2, 0x080485b4 in main (
+	Breakpoint 2, 0x080485b4 in main ()
+	(gdb) info frame
+		Stack level 0, frame at 0xbffff710:
+		 eip = 0x80485b4 in main; saved eip *0xb7e45
