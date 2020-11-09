@@ -32,4 +32,7 @@ We have buffer here, let's count its size:
 	Breakpoint 2, 0x080485b4 in main ()
 	(gdb) info frame
 		Stack level 0, frame at 0xbffff710:
-		 eip = 0x80485b4 in main; saved eip *0xb7e45
+		 eip = 0x80485b4 in main; saved eip *0xb7e454d3*
+		 Arglist at 0xbffff708, args:
+		 Locals at 0xbffff708, Previous frame's sp is 0xbffff710
+		 Saved r
