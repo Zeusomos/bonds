@@ -35,4 +35,7 @@ We have buffer here, let's count its size:
 		 eip = 0x80485b4 in main; saved eip *0xb7e454d3*
 		 Arglist at 0xbffff708, args:
 		 Locals at 0xbffff708, Previous frame's sp is 0xbffff710
-		 Saved r
+		 Saved registers:
+		  ebp at 0xbffff708, eip at 0xbffff70c
+	(gdb) x/20wx $esp
+		0xbffff6c0:	0xbffff6d6	0x080498d8	0x0
