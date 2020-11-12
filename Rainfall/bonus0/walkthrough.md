@@ -50,4 +50,11 @@ We have buffer here, let's count its size:
 
 Buffer starts in `0xbffff6d6` and `EIP` return address is in `0xbffff70c`:
 
-	(gdb) p/x 0x
+	(gdb) p/x 0xbffff700 + 12
+		$3 = 0xbffff70c
+
+That is 54 bytes:
+	
+	(gdb) p 0xbffff70c - 0xbffff6d6
+		$15 = 54
+	
