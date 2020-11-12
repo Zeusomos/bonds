@@ -46,4 +46,8 @@ We have buffer here, let's count its size:
 	(gdb) p/x $esp
 		$7 = 0xbffff6c0
 	(gdb) p/x $esp + 0x16
-		$8 = 0xbfff
+		$8 = 0xbffff6d6
+
+Buffer starts in `0xbffff6d6` and `EIP` return address is in `0xbffff70c`:
+
+	(gdb) p/x 0x
