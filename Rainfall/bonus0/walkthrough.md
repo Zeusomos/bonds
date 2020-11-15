@@ -58,4 +58,9 @@ That is 54 bytes:
 	(gdb) p 0xbffff70c - 0xbffff6d6
 		$15 = 54
 	
-But the real buffer size is 42 bytes because after buffer we also have puts function before returning fro
+But the real buffer size is 42 bytes because after buffer we also have puts function before returning from main.\
+Let's go to `pp` function:
+
+	(gdb) disass pp
+	Dump of assembler code for function pp:
+	   0x080485
