@@ -63,4 +63,7 @@ Let's go to `pp` function:
 
 	(gdb) disass pp
 	Dump of assembler code for function pp:
-	   0x080485
+	   0x0804851e <+0>:	push   ebp
+	   0x0804851f <+1>:	mov    ebp,esp
+	   0x08048521 <+3>:	push   edi
+	   0x08048522 <+4>:	push 
