@@ -66,4 +66,6 @@ Let's go to `pp` function:
 	   0x0804851e <+0>:	push   ebp
 	   0x0804851f <+1>:	mov    ebp,esp
 	   0x08048521 <+3>:	push   edi
-	   0x08048522 <+4>:	push 
+	   0x08048522 <+4>:	push   ebx
+	   0x08048523 <+5>:	sub    esp,0x50
+	   0x08048526 <+8>:	mov    DWORD PTR [esp+0x4],0x80486a0 	;argument 
