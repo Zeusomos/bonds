@@ -72,4 +72,5 @@ Let's go to `pp` function:
 	   0x0804852e <+16>:	lea    eax,[ebp-0x30] 			;preparations to p
 	   0x08048531 <+19>:	mov    DWORD PTR [esp],eax 		;argument to p
 	   0x08048534 <+22>:	call   0x80484b4 <p>			;call p
-	   0x08048539 <
+	   0x08048539 <+27>:	mov    DWORD PTR [esp+0x4],0x80486a0 	;argument to p
+	   0x08048541 <+35>:	lea    eax
