@@ -79,4 +79,6 @@ Let's go to `pp` function:
 	   0x0804854c <+46>:	lea    eax,[ebp-0x30] 			;preparations to strcpy
 	   0x0804854f <+49>:	mov    DWORD PTR [esp+0x4],eax 		;argument to strcpy
 	   0x08048553 <+53>:	mov    eax,DWORD PTR [ebp+0x8] 		;preparations to strcpy
-	   0x08048556 <+56>:	mov    DWORD PTR [esp],eax 		;ar
+	   0x08048556 <+56>:	mov    DWORD PTR [esp],eax 		;argument to strcpy
+	   0x08048559 <+59>:	call   0x80483a0 <strcpy@plt>		;call strcpy
+	   0x0804855e <+64>:	mov
