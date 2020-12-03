@@ -82,4 +82,8 @@ Let's go to `pp` function:
 	   0x08048556 <+56>:	mov    DWORD PTR [esp],eax 		;argument to strcpy
 	   0x08048559 <+59>:	call   0x80483a0 <strcpy@plt>		;call strcpy
 	   0x0804855e <+64>:	mov    ebx,0x80486a4			;preparations to strlen
-	   0x08048563 <+69>:	mov    eax,DWORD PTR [ebp+0x8] 		;b
+	   0x08048563 <+69>:	mov    eax,DWORD PTR [ebp+0x8] 		;buffer is loaded coming as argument
+
+	   That is strlen:
+	   0x08048566 <+72>:	mov    DWORD PTR [ebp-0x3c],0xffffffff
+	   0x08
