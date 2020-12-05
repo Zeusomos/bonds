@@ -86,4 +86,6 @@ Let's go to `pp` function:
 
 	   That is strlen:
 	   0x08048566 <+72>:	mov    DWORD PTR [ebp-0x3c],0xffffffff
-	   0x08
+	   0x0804856d <+79>:	mov    edx,eax
+	   0x0804856f <+81>:	mov    eax,0x0
+	   0x08048574 <+86>:	mov    ec
