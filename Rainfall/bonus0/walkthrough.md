@@ -88,4 +88,6 @@ Let's go to `pp` function:
 	   0x08048566 <+72>:	mov    DWORD PTR [ebp-0x3c],0xffffffff
 	   0x0804856d <+79>:	mov    edx,eax
 	   0x0804856f <+81>:	mov    eax,0x0
-	   0x08048574 <+86>:	mov    ec
+	   0x08048574 <+86>:	mov    ecx,DWORD PTR [ebp-0x3c]
+	   0x08048577 <+89>:	mov    edi,edx
+	   0x08048579 <+91>:	repnz scas al,BYTE PTR es:
