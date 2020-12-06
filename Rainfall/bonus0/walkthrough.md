@@ -93,4 +93,6 @@ Let's go to `pp` function:
 	   0x08048579 <+91>:	repnz scas al,BYTE PTR es:[edi]
 	   0x0804857b <+93>:	mov    eax,ecx
 	   0x0804857d <+95>:	not    eax
-	   0x0804857f <+97>:	sub   
+	   0x0804857f <+97>:	sub    eax,0x1
+	   0x08048582 <+100>:	add    eax,DWORD PTR [ebp+0x8]
+	   0x08048585 <+103>:	movzx  edx,WORD PT
