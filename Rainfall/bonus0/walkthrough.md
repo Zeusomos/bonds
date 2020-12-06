@@ -95,4 +95,7 @@ Let's go to `pp` function:
 	   0x0804857d <+95>:	not    eax
 	   0x0804857f <+97>:	sub    eax,0x1
 	   0x08048582 <+100>:	add    eax,DWORD PTR [ebp+0x8]
-	   0x08048585 <+103>:	movzx  edx,WORD PT
+	   0x08048585 <+103>:	movzx  edx,WORD PTR [ebx]
+	   0x08048588 <+106>:	mov    WORD PTR [eax],dx
+	
+	   0x0804858b <+109>:	lea    eax,[ebp-0x1c] 			;prepar
