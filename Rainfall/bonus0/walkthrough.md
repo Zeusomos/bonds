@@ -98,4 +98,6 @@ Let's go to `pp` function:
 	   0x08048585 <+103>:	movzx  edx,WORD PTR [ebx]
 	   0x08048588 <+106>:	mov    WORD PTR [eax],dx
 	
-	   0x0804858b <+109>:	lea    eax,[ebp-0x1c] 			;prepar
+	   0x0804858b <+109>:	lea    eax,[ebp-0x1c] 			;preparations to strcat
+	   0x0804858e <+112>:	mov    DWORD PTR [esp+0x4],eax 		;argument to strcat
+	   0x
