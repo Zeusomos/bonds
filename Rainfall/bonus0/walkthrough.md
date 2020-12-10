@@ -100,4 +100,5 @@ Let's go to `pp` function:
 	
 	   0x0804858b <+109>:	lea    eax,[ebp-0x1c] 			;preparations to strcat
 	   0x0804858e <+112>:	mov    DWORD PTR [esp+0x4],eax 		;argument to strcat
-	   0x
+	   0x08048592 <+116>:	mov    eax,DWORD PTR [ebp+0x8] 		;preparations to strcat
+	   0x08048595 <+119>:	mov    DWORD PTR [esp
