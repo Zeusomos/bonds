@@ -103,4 +103,7 @@ Let's go to `pp` function:
 	   0x08048592 <+116>:	mov    eax,DWORD PTR [ebp+0x8] 		;preparations to strcat
 	   0x08048595 <+119>:	mov    DWORD PTR [esp],eax 		;argument to strcat
 	   0x08048598 <+122>:	call   0x8048390 <strcat@plt>		;call strcat
-	   0x0804
+	   0x0804859d <+127>:	add    esp,0x50
+	   0x080485a0 <+130>:	pop    ebx
+	   0x080485a1 <+131>:	pop    edi
+	
