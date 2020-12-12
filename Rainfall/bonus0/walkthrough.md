@@ -109,4 +109,11 @@ Let's go to `pp` function:
 	   0x080485a2 <+132>:	pop    ebp
 	   0x080485a3 <+133>:	ret
 
-Let's see what we have under so
+Let's see what we have under some addresses:
+
+	(gdb) x/s 0x80486a0
+		0x80486a0:	 " - "
+	(gdb) x/s 0x80486a4
+		0x80486a4:	 " "
+
+And look how far 
