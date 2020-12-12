@@ -116,4 +116,8 @@ Let's see what we have under some addresses:
 	(gdb) x/s 0x80486a4
 		0x80486a4:	 " "
 
-And look how far 
+And look how far `EIP` from pp lies:
+
+	(gdb) info frame
+		Stack level 0, frame at 0xbffff6c0:
+		 eip = 0x8
