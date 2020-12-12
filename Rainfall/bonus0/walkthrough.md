@@ -106,4 +106,7 @@ Let's go to `pp` function:
 	   0x0804859d <+127>:	add    esp,0x50
 	   0x080485a0 <+130>:	pop    ebx
 	   0x080485a1 <+131>:	pop    edi
-	
+	   0x080485a2 <+132>:	pop    ebp
+	   0x080485a3 <+133>:	ret
+
+Let's see what we have under so
