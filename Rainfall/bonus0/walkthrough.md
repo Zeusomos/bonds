@@ -120,4 +120,7 @@ And look how far `EIP` from pp lies:
 
 	(gdb) info frame
 		Stack level 0, frame at 0xbffff6c0:
-		 eip = 0x8
+		 eip = 0x8048523 in pp; saved eip *0x80485b9*
+		 called by frame at 0xbffff710
+		 Arglist at 0xbffff6b8, args:
+		 L
