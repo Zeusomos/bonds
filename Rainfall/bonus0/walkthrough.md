@@ -126,4 +126,6 @@ And look how far `EIP` from pp lies:
 		 Locals at 0xbffff6b8, Previous frame's sp is 0xbffff6c0
 		 Saved registers:
 		  ebp at 0xbffff6b8, eip at 0xbffff6bc
-	(gdb) 
+	(gdb) x/30wx $esp
+		0xbffff6b0:	0xb7fd0ff4	0x00000000	0xbffff708	*0x080485b9*
+		0xbffff6c0:	0xbffff6d
