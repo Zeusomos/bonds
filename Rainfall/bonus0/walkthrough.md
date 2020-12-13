@@ -123,4 +123,7 @@ And look how far `EIP` from pp lies:
 		 eip = 0x8048523 in pp; saved eip *0x80485b9*
 		 called by frame at 0xbffff710
 		 Arglist at 0xbffff6b8, args:
-		 L
+		 Locals at 0xbffff6b8, Previous frame's sp is 0xbffff6c0
+		 Saved registers:
+		  ebp at 0xbffff6b8, eip at 0xbffff6bc
+	(gdb) 
