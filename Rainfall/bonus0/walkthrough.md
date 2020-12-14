@@ -133,4 +133,7 @@ And look how far `EIP` from pp lies:
 And finally let's look at `p` function:
 
 	(gdb) disass p
-	Dump of assembler 
+	Dump of assembler code for function p:
+	   0x080484b4 <+0>:	push   ebp
+	   0x080484b5 <+1>:	mov    ebp,esp
+	   0x080484b7 <+
