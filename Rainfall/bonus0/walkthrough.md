@@ -136,4 +136,5 @@ And finally let's look at `p` function:
 	Dump of assembler code for function p:
 	   0x080484b4 <+0>:	push   ebp
 	   0x080484b5 <+1>:	mov    ebp,esp
-	   0x080484b7 <+
+	   0x080484b7 <+3>:	sub    esp,0x1018
+	=> 0x080484bd <+9>:	mov    eax,DWORD PTR [ebp+0xc] 		;argument coming to funct
