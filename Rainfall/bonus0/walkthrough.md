@@ -128,4 +128,9 @@ And look how far `EIP` from pp lies:
 		  ebp at 0xbffff6b8, eip at 0xbffff6bc
 	(gdb) x/30wx $esp
 		0xbffff6b0:	0xb7fd0ff4	0x00000000	0xbffff708	*0x080485b9*
-		0xbffff6c0:	0xbffff6d
+		0xbffff6c0:	0xbffff6d6	0x080498d8	0x00000001	0x0804835d
+
+And finally let's look at `p` function:
+
+	(gdb) disass p
+	Dump of assembler 
