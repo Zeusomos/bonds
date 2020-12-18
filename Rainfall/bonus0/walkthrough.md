@@ -137,4 +137,6 @@ And finally let's look at `p` function:
 	   0x080484b4 <+0>:	push   ebp
 	   0x080484b5 <+1>:	mov    ebp,esp
 	   0x080484b7 <+3>:	sub    esp,0x1018
-	=> 0x080484bd <+9>:	mov    eax,DWORD PTR [ebp+0xc] 		;argument coming to funct
+	=> 0x080484bd <+9>:	mov    eax,DWORD PTR [ebp+0xc] 		;argument coming to function
+	   0x080484c0 <+12>:	mov    DWORD PTR [esp],eax 		;argument to puts
+	   0x080484c3 <+15>:	call   0x80483b0
