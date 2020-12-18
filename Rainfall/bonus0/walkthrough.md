@@ -146,4 +146,5 @@ And finally let's look at `p` function:
 	   0x080484da <+38>:	mov    DWORD PTR [esp],0x0 		;preparations to read, 0 as stream
 	   0x080484e1 <+45>:	call   0x8048380 <read@plt>		;call read
 	   0x080484e6 <+50>:	mov    DWORD PTR [esp+0x4],0xa 		;preparations to strchr,  10 or “\n” (10 nl)
-	   
+	   0x080484ee <+58>:	lea    eax,[ebp-0x1008] 		;argument to strchr, buffer
+	   0x080484f4 <+64>:	mov    DWORD PTR
