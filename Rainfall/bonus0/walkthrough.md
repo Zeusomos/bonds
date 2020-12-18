@@ -143,4 +143,5 @@ And finally let's look at `p` function:
 	   0x080484c8 <+20>:	mov    DWORD PTR [esp+0x8],0x1000 	;argument to read, 4096 in dec
 	   0x080484d0 <+28>:	lea    eax,[ebp-0x1008] 		;argument to read, buffer
 	   0x080484d6 <+34>:	mov    DWORD PTR [esp+0x4],eax 		;preparations to read
-	   0x080484da <+38>:	mov    DWOR
+	   0x080484da <+38>:	mov    DWORD PTR [esp],0x0 		;preparations to read, 0 as stream
+	   0x080484e1 <+45>:	call   0x8048380 <read@plt>		;cal
