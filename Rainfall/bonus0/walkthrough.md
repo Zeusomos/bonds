@@ -150,4 +150,6 @@ And finally let's look at `p` function:
 	   0x080484f4 <+64>:	mov    DWORD PTR [esp],eax 		;preparations to strchr
 	   0x080484f7 <+67>:	call   0x80483d0 <strchr@plt>		;call strchr
 	   0x080484fc <+72>:	mov    BYTE PTR [eax],0x0 		;strchr result to null
-	   0x080484ff <+75>:	lea    eax,[ebp-0x1008] 		
+	   0x080484ff <+75>:	lea    eax,[ebp-0x1008] 		;preparations of buffer
+	   0x08048505 <+81>:	mov    DWORD PTR [esp+0x8],0x14 	;argument to strncpy, 20 in dec
+	   
