@@ -154,4 +154,5 @@ And finally let's look at `p` function:
 	   0x08048505 <+81>:	mov    DWORD PTR [esp+0x8],0x14 	;argument to strncpy, 20 in dec
 	   0x0804850d <+89>:	mov    DWORD PTR [esp+0x4],eax 		;argument to strncpy, buffer
 	   0x08048511 <+93>:	mov    eax,DWORD PTR [ebp+0x8] 		;argument to strncpy, argument of p function
-   		0x08048514 <+96>:	mov    D
+   		0x08048514 <+96>:	mov    DWORD PTR [esp],eax	;preparations to strncpy
+   		0x08048517 <+99>:	call   0x80483f0 <strncpy@plt>	;cal
