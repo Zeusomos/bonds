@@ -155,4 +155,8 @@ And finally let's look at `p` function:
 	   0x0804850d <+89>:	mov    DWORD PTR [esp+0x4],eax 		;argument to strncpy, buffer
 	   0x08048511 <+93>:	mov    eax,DWORD PTR [ebp+0x8] 		;argument to strncpy, argument of p function
    		0x08048514 <+96>:	mov    DWORD PTR [esp],eax	;preparations to strncpy
-   		0x08048517 <+99>:	call   0x80483f0 <strncpy@plt>	;cal
+   		0x08048517 <+99>:	call   0x80483f0 <strncpy@plt>	;call strncpy
+   		0x0804851c <+104>:	leave
+   		0x0804851d <+105>:	ret
+
+Let's count the buffer si
