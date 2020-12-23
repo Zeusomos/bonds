@@ -159,4 +159,9 @@ And finally let's look at `p` function:
    		0x0804851c <+104>:	leave
    		0x0804851d <+105>:	ret
 
-Let's count the buffer si
+Let's count the buffer size:
+
+	Breakpoint 7, 0x080484bd in p ()
+	(gdb) info frame
+		Stack level 0, frame at 0xbffff660:
+		 eip = 0x80484bd
