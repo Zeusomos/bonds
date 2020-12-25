@@ -167,3 +167,6 @@ Let's count the buffer size:
 		 eip = 0x80484bd in p; saved eip *0x8048539*
 		 called by frame at 0xbffff6c0
 		 Arglist at 0xbffff658, args:
+		 Locals at 0xbffff658, Previous frame's sp is 0xbffff660
+		 Saved registers:
+		  ebp at 0xbffff658, eip at 0xbff
