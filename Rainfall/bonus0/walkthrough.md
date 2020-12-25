@@ -164,4 +164,6 @@ Let's count the buffer size:
 	Breakpoint 7, 0x080484bd in p ()
 	(gdb) info frame
 		Stack level 0, frame at 0xbffff660:
-		 eip = 0x80484bd
+		 eip = 0x80484bd in p; saved eip *0x8048539*
+		 called by frame at 0xbffff6c0
+		 Arglist at 0xbffff658, args:
