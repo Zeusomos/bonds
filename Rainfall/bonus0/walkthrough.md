@@ -169,4 +169,8 @@ Let's count the buffer size:
 		 Arglist at 0xbffff658, args:
 		 Locals at 0xbffff658, Previous frame's sp is 0xbffff660
 		 Saved registers:
-		  ebp at 0xbffff658, eip at 0xbff
+		  ebp at 0xbffff658, eip at 0xbffff65c
+	(gdb) x/2000wx $esp
+		…
+	0xbffff620:	0xbffff658	0xb7ffeff4	0xb7fffad0	0xbffff744
+	0xbffff630:	0xbffff700	0
