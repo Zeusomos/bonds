@@ -185,4 +185,5 @@ Let's count the buffer size:
 	(gdb) p 0xbffff65c - 0xbfffe648
 		$21 = 4116
 
-Return `EIP` address is after 4116 bytes. After buffer we have functions plus we ha
+Return `EIP` address is after 4116 bytes. After buffer we have functions plus we have 4096 in read so buffer is 4096 length.\
+Numbers in hex are transferred to decimal with the help of programming calculator
