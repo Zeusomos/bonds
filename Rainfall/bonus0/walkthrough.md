@@ -183,4 +183,6 @@ Let's count the buffer size:
 	(gdb) p/x $esp+0x8
 		$19 = 0xbfffe648 #buffer begins here
 	(gdb) p 0xbffff65c - 0xbfffe648
-	
+		$21 = 4116
+
+Return `EIP` address is after 4116 bytes. After buffer we have functions plus we ha
