@@ -186,4 +186,8 @@ Let's count the buffer size:
 		$21 = 4116
 
 Return `EIP` address is after 4116 bytes. After buffer we have functions plus we have 4096 in read so buffer is 4096 length.\
-Numbers in hex are transferred to decimal with the help of programming calculator
+Numbers in hex are transferred to decimal with the help of programming calculator and finally we write the code in C.
+
+# Exploitation
+
+Here we have `strncpy` in `p` that does not put '\0'
