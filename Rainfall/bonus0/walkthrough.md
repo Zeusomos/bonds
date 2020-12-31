@@ -190,4 +190,4 @@ Numbers in hex are transferred to decimal with the help of programming calculato
 
 # Exploitation
 
-Here we have `strncpy` in `p` that does not put '\0' if buffer is longer than size sent to the function. All the other functions for instance strchr or strcat use '\0' 
+Here we have `strncpy` in `p` that does not put '\0' if buffer is longer than size sent to the function. All the other functions for instance strchr or strcat use '\0' in order to stop reading the string. If there is no '\0' we can use this vulnerability but be very careful in the numbe
