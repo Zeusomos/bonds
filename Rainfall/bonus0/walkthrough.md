@@ -193,4 +193,10 @@ Numbers in hex are transferred to decimal with the help of programming calculato
 Here we have `strncpy` in `p` that does not put '\0' if buffer is longer than size sent to the function. All the other functions for instance strchr or strcat use '\0' in order to stop reading the string. If there is no '\0' we can use this vulnerability but be very careful in the number of bytes to put.\
 With the help of line generator we get the offset of `EIP` after which saved `EIP` is rewritten in main. Source: https://wiremask.eu/tools/buffer-overflow-pattern-generator/ . If we try to send 2 arguments where first is less than 20 and the second is more than 20 so uses `strncpy` vulnerability, we get the offset:
 
-	Break
+	Breakpoint 2, 0x080484bd in p ()
+	(gdb) c
+		Continuing.
+		 -
+		AAAABBBBCCCCDDDDEEEEF
+	Breakpoint 2, 0x080484bd in p ()
+	(g
