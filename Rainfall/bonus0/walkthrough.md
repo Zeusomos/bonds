@@ -199,4 +199,7 @@ With the help of line generator we get the offset of `EIP` after which saved `EI
 		 -
 		AAAABBBBCCCCDDDDEEEEF
 	Breakpoint 2, 0x080484bd in p ()
-	(g
+	(gdb) c
+		Continuing.
+		 -
+		Aa0Aa1Aa2Aa3Aa4Aa5Aa6Aa7Aa8Aa9Ab0Ab1Ab2Ab3Ab4Ab5Ab6Ab7Ab8Ab9Ac0Ac1Ac2Ac3Ac4
