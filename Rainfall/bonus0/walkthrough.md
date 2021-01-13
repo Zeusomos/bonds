@@ -206,4 +206,5 @@ With the help of line generator we get the offset of `EIP` after which saved `EI
 	Program received signal SIGSEGV, Segmentation fault.
 		0x41336141 in ?? ()
 
-With "address" 0x41336141 that 
+With "address" 0x41336141 that is part "Aa3A" from string we get that offset is 9.\
+This offset is too small to enter a shellcode directly and
