@@ -207,4 +207,4 @@ With the help of line generator we get the offset of `EIP` after which saved `EI
 		0x41336141 in ?? ()
 
 With "address" 0x41336141 that is part "Aa3A" from string we get that offset is 9.\
-This offset is too small to enter a shellcode directly and
+This offset is too small to enter a shellcode directly and we do not have any calls of `system` or `execve` and we need to get control of the terminal under use
