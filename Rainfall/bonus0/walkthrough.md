@@ -208,4 +208,6 @@ With the help of line generator we get the offset of `EIP` after which saved `EI
 
 With "address" 0x41336141 that is part "Aa3A" from string we get that offset is 9.\
 This offset is too small to enter a shellcode directly and we do not have any calls of `system` or `execve` and we need to get control of the terminal under user bonus1.\
-So we need to insert shellcode as a spoiled pillow to some place in the code. What shellcode fo
+So we need to insert shellcode as a spoiled pillow to some place in the code. What shellcode for linux x86 we will use:
+
+	\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x89\xc1\x89\xc2\
