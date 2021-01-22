@@ -217,4 +217,6 @@ What does it mean:
 	Disassembly of section .text:
 
 	08048060 <_start>:
-	 8048060: 31
+	 8048060: 31 c0                 xor    %eax,%eax
+	 8048062: 50                    push   %eax
+	 8048063: 68 2f 2f 73 68    
