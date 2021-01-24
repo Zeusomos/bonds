@@ -224,4 +224,6 @@ What does it mean:
 	 804806d: 89 e3                 mov    %esp,%ebx	;copy string (command) address
 	 804806f: 89 c1                 mov    %eax,%ecx
 	 8048071: 89 c2                 mov    %eax,%edx
-	 8048073: b0 0b     
+	 8048073: b0 0b                 mov    $0xb,%al		;11
+	 8048075: cd 80                 int    $0x80		;execve()
+	 8048077: 31
