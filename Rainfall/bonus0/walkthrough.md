@@ -233,4 +233,9 @@ What does it mean:
 Shellcode length is 28 bytes that is very important because we need to count where to put it so that it is executed and does not break the programm.\
 We can not put it directly but we can use environment variables. How can we use it after? Each environmental variable has its address and lie on stack closer to higher addresses (higher than main). Address of the environmental varible depends on variable name length and variable value length. We can find the address with the simple program on C:
 
-	#
+	#include <stdio.h>
+	#include <stdlib.h>
+
+	int main(int argc, char **argv)
+	{
+		printf("%s is at %p\n", argv[1], 
