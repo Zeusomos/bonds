@@ -238,4 +238,10 @@ We can not put it directly but we can use environment variables. How can we use 
 
 	int main(int argc, char **argv)
 	{
-		printf("%s is at %p\n", argv[1], 
+		printf("%s is at %p\n", argv[1], getenv(argv[1]));
+	}
+
+And create the variable with shellcode:
+
+	bonus0@RainFall:~$ ls /tmp
+	bonus0@RainFall
