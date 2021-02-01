@@ -244,4 +244,6 @@ We can not put it directly but we can use environment variables. How can we use 
 And create the variable with shellcode:
 
 	bonus0@RainFall:~$ ls /tmp
-	bonus0@RainFall
+	bonus0@RainFall:~$ vi /tmp/find_env.c
+	bonus0@RainFall:~$ gcc -o /tmp/find_env /tmp/find_env.c
+	bonus0@RainFall:~
