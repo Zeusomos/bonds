@@ -252,4 +252,4 @@ And create the variable with shellcode:
 
 What is `"\x90" * 100` here? That is a `NOP`path: 
 
-> In computer science, a NOP, no-op, or NOOP (pronounced "no op"; short for no operation) is a machine language instruction and i
+> In computer science, a NOP, no-op, or NOOP (pronounced "no op"; short for no operation) is a machine language instruction and its assembly language mnemonic, programming language statement, or computer protocol command that does nothing.
