@@ -252,4 +252,6 @@ And create the variable with shellcode:
 
 What is `"\x90" * 100` here? That is a `NOP`path: 
 
-> In computer science, a NOP, no-op, or NOOP (pronounced "no op"; short for no operation) is a machine language instruction and its assembly language mnemonic, programming language statement, or computer protocol command that does nothing. `NOP` can be useful to "yield" during a critical section, i.e. allow other interrupts to occur so as to reduce interrupt latency caused by the critical section. It is processed by the CPU like any other instruction. So this means that it will be readed from memory, will increment the instruction pointer, but in the execute phase after the instruction decode no
+> In computer science, a NOP, no-op, or NOOP (pronounced "no op"; short for no operation) is a machine language instruction and its assembly language mnemonic, programming language statement, or computer protocol command that does nothing. `NOP` can be useful to "yield" during a critical section, i.e. allow other interrupts to occur so as to reduce interrupt latency caused by the critical section. It is processed by the CPU like any other instruction. So this means that it will be readed from memory, will increment the instruction pointer, but in the execute phase after the instruction decode nothing else will be done.
+
+That means that CPU will do nothing but just increment the instruction pointer and finally
