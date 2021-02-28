@@ -256,4 +256,7 @@ What is `"\x90" * 100` here? That is a `NOP`path:
 
 That means that CPU will do nothing but just increment the instruction pointer and finally we will come to out shellcode. Why 100? Because we make it quite big so that nothing interrupts CPU on the way to shellcode.\
 So we have shellcode prepared, address 0xbffff85f to be inserted that is \x5f\xf8\xff\xbf in little-endian and understanding that offset is 9. How we do the exploitation though?\
-We can come to main only with the help of buffer. Buffer is filled with data in `p` function. Let's try from this side. In order to show how final re
+We can come to main only with the help of buffer. Buffer is filled with data in `p` function. Let's try from this side. In order to show how final result works we will give the final answer and explain it and then show in gdb.\
+Final exploit:
+
+	bon
