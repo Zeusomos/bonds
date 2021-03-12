@@ -263,4 +263,6 @@ Final exploit:
 
 Where:
 * first input is "0" * 4095 + "\n" that will fill in buffer fully but put final '\0' in `strchr`
-* second input is "123456789" + "\x5f\xf8\xff\xbf" + "0" * 7 because read will read only 4096 bytes a
+* second input is "123456789" + "\x5f\xf8\xff\xbf" + "0" * 7 because read will read only 4096 bytes and everything rest is second input.
+* "123456789" is offset of 9
+* "\x5f\xf8\xff\xbf" is address of environ
