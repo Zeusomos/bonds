@@ -268,4 +268,8 @@ Where:
 * "\x5f\xf8\xff\xbf" is address of environment variable
 * "0" * 7 is allignment to come to the right place
 
-How it works? We put a lot of breakpoints in main before and after call of `pp` function, in `pp` before and after `srtcpy` and `strcat` and in 
+How it works? We put a lot of breakpoints in main before and after call of `pp` function, in `pp` before and after `srtcpy` and `strcat` and in `p` before and after `strncpy`.\
+Before read in `p`:
+
+	(gdb) r < /tmp/bonus0
+	Starting program: /home/user/bonus0/bonus0 
