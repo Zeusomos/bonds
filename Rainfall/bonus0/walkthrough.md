@@ -272,4 +272,8 @@ How it works? We put a lot of breakpoints in main before and after call of `pp` 
 Before read in `p`:
 
 	(gdb) r < /tmp/bonus0
-	Starting program: /home/user/bonus0/bonus0 
+	Starting program: /home/user/bonus0/bonus0 < /tmp/bonus0
+
+	Breakpoint 1, 0x080485a7 in main ()
+	(gdb) x/20wx $esp
+		0xbffff678:	0x00000000	|0xb7
