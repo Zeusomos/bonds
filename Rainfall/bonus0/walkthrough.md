@@ -282,4 +282,7 @@ Before read in `p`:
 		0xbffff6a8:	0x00000000	0x00000000	0x00000000	0x52c1cd8a
 		0xbffff6b8:	0x6585e99a	0x00000000	0x00000000	0x00000000
 		(gdb) info frame
-		Stack level 0, frame at
+		Stack level 0, frame at 0xbffff680:
+		 eip = 0x80485a7 in main; saved eip |0xb7e454d3|
+		 Arglist at 0xbffff678, args:
+		 Locals 
