@@ -287,4 +287,10 @@ Before read in `p`:
 		 Arglist at 0xbffff678, args:
 		 Locals at 0xbffff678, Previous frame's sp is 0xbffff680
 		 Saved registers:
-		  ebp at 0xbffff678, eip at 0x
+		  ebp at 0xbffff678, eip at 0xbffff67c
+	(gdb) c
+	Continuing.
+	
+	Breakpoint 3, 0x08048523 in pp ()
+	(gdb) x/100wx $esp
+		0xbffff620:	0xb7fd0ff4	0x
