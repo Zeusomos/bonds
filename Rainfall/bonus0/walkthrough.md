@@ -319,4 +319,7 @@ Before read in `p`:
 		0xbffff790:	0x00000006	0x00001000	0x00000011	0x00000064
 		0xbffff7a0:	0x00000003	0x08048034	0x00000004	0x00000020
 	(gdb) info frmae
-		Undefined info command
+		Undefined info command: "frmae".  Try "help info".
+		(gdb) info frame
+		Stack level 0, frame at 0xbffff630:
+		 eip = 0x8048523 in 
