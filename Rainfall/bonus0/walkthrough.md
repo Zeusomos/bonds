@@ -325,4 +325,6 @@ Before read in `p`:
 		 eip = 0x8048523 in pp; saved eip |0x80485b9|
 		 called by frame at 0xbffff680
 		 Arglist at 0xbffff628, args:
-		 Locals at 
+		 Locals at 0xbffff628, Previous frame's sp is 0xbffff630
+		 Saved registers:
+		  ebp at 0xbffff628, eip at 0xbf
