@@ -336,4 +336,7 @@ Before read in `p`:
 		Stack level 0, frame at 0xbffff5d0:
 		 eip = 0x80484bd in p; saved eip |0x8048539|
 		 called by frame at 0xbffff630
-		 Ar
+		 Arglist at 0xbffff5c8, args:
+		 Locals at 0xbffff5c8, Previous frame's sp is 0xbffff5d0
+		 Saved registers:
+		
