@@ -339,4 +339,8 @@ Before read in `p`:
 		 Arglist at 0xbffff5c8, args:
 		 Locals at 0xbffff5c8, Previous frame's sp is 0xbffff5d0
 		 Saved registers:
-		
+		  ebp at 0xbffff5c8, eip at 0xbffff5cc
+
+	(gdb) x/2000wx $esp
+		…
+		0xbffff500:	0xb7fdcb18	0xb7fe7cac	0x00000000	0x
