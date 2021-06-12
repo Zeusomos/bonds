@@ -384,4 +384,8 @@ Before read in `p`:
 
 First input after read:
 
-	Breakpoint 9, 0x080
+	Breakpoint 9, 0x080484fc in p ()
+	(gdb) x/1200wx $esp
+
+		0xbfffe5b0:	0xbfffe5c0	0x0000000a	0x00001000	0x00000000
+		0xbfffe5c0:	
