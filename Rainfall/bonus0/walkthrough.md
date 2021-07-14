@@ -432,4 +432,7 @@ First input after read:
 
 First input after `strncpy`:
 
-	Breakpoint 10, 0x0804851c in 
+	Breakpoint 10, 0x0804851c in p ()
+	(gdb) x/1200wx $esp
+		0xbfffe5b0:	0xbffff5f8	0xbfffe5c0	0x00000014	0x00000000
+		0xbfffe5c0:	0x30303030	0x303
