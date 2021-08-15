@@ -476,4 +476,4 @@ First input after `strncpy`:
 		0xbffff740:	0xbffffe83	0xbffffed0	0xbffffedf	0xbffffef5
 		0xbffff750:	0xbfffff06	0xbfffff0f	0xbfffff17	0xbfffff2e
 
-Second i
+Second input after read in the end of it is the same as first argument after `strncpy` because we do not clean the b
