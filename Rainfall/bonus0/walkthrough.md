@@ -479,4 +479,6 @@ First input after `strncpy`:
 Second input after read in the end of it is the same as first argument after `strncpy` because we do not clean the buffer. Second input after `strncpy`:
 
 	(gdb) x/1200wx $esp
-		0xbffff500:	0x30303030	0x30303030	0x30
+		0xbffff500:	0x30303030	0x30303030	0x30303030	0x30303030
+		0xbffff510:	0x30303030	0x30303030	0x30303030	0x30303030
+		0xbffff520:	0x30303030	0x30303030	0x3030
