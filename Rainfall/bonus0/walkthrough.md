@@ -476,4 +476,7 @@ First input after `strncpy`:
 		0xbffff740:	0xbffffe83	0xbffffed0	0xbffffedf	0xbffffef5
 		0xbffff750:	0xbfffff06	0xbfffff0f	0xbfffff17	0xbfffff2e
 
-Second input after read in the end of it is the same as first argument after `strncpy` because we do not clean the b
+Second input after read in the end of it is the same as first argument after `strncpy` because we do not clean the buffer. Second input after `strncpy`:
+
+	(gdb) x/1200wx $esp
+		0xbffff500:	0x30303030	0x30303030	0x30
