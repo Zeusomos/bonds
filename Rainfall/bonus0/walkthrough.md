@@ -518,4 +518,6 @@ Second input after read in the end of it is the same as first argument after `st
 		0xbffff740:	0xbffffe83	0xbffffed0	0xbffffedf	0xbffffef5
 		0xbffff750:	0xbfffff06	0xbfffff0f	0xbfffff17	0xbfffff2e
 
-In `pp` af
+In `pp` after `strcpy` (we do not have any \0 in ready string on line 0xbffff5f0 - 0xbffff600):
+
+	(gd
