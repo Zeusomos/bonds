@@ -520,4 +520,7 @@ Second input after read in the end of it is the same as first argument after `st
 
 In `pp` after `strcpy` (we do not have any \0 in ready string on line 0xbffff5f0 - 0xbffff600):
 
-	(gd
+	(gdb) x/50wx $esp
+		0xbffff5d0:	0xbffff646	0xbffff5f8	0x00000000	0xb7fd0ff4
+		0xbffff5e0:	0xbffff62e	0xbffff62f	0x00000001	0xb7ec3c49
+		0xbffff5f0:	0xbffff
