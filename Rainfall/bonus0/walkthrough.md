@@ -533,4 +533,6 @@ In `pp` after `strcpy` (we do not have any \0 in ready string on line 0xbffff5f0
 		0xbffff660:	0x5f393837	0x30bffff8	0x30303030	0x0ff43030*
 		0xbffff670:	0x0800b7fd	0x00000000	0x00000000	|0xb7e454d3| saved eip main
 		0xbffff680:	0x00000001	0xbffff714	0xbffff71c	0xb7fdc858
-		0xbffff690:	0x00000000	
+		0xbffff690:	0x00000000	0xbffff71c
+
+We see changes of buffer in `main`. Let's continue and see `pp` after `strcat` (we do not h
