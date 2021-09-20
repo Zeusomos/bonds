@@ -540,4 +540,7 @@ We see changes of buffer in `main`. Let's continue and see `pp` after `strcat` (
 	   0x08048595 <+119>:	mov    DWORD PTR [esp],eax
 	   0x08048598 <+122>:	call   0x8048390 <strcat@plt>
 	=> 0x0804859d <+127>:	add    esp,0x50
-	   0x
+	   0x080485a0 <+130>:	pop    ebx
+	   0x080485a1 <+131>:	pop    edi
+	   0x080485a2 <+132>:	pop    ebp
+	   0x080
