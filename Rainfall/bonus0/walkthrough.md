@@ -537,4 +537,7 @@ In `pp` after `strcpy` (we do not have any \0 in ready string on line 0xbffff5f0
 
 We see changes of buffer in `main`. Let's continue and see `pp` after `strcat` (we do not have any \0 in ready string on line 0xbffff600 - 0xbffff610):
 
-	   0x08048595 <+119>:	mov    DWO
+	   0x08048595 <+119>:	mov    DWORD PTR [esp],eax
+	   0x08048598 <+122>:	call   0x8048390 <strcat@plt>
+	=> 0x0804859d <+127>:	add    esp,0x50
+	   0x
