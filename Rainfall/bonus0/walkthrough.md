@@ -547,4 +547,5 @@ We see changes of buffer in `main`. Let's continue and see `pp` after `strcat` (
 	End of assembler dump.
 	(gdb) x/50wx $esp
 		0xbffff5d0:	0xbffff646	0xbffff60c	0x00000000	0xb7fd0ff4
-		0xbff
+		0xbffff5e0:	0xbffff62e	0xbffff62f	0x00000001	0xffffffff
+		0xbffff5f0:	0xbffff62f	0xbffff62e	**0x30303
