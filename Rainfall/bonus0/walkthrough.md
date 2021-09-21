@@ -543,4 +543,8 @@ We see changes of buffer in `main`. Let's continue and see `pp` after `strcat` (
 	   0x080485a0 <+130>:	pop    ebx
 	   0x080485a1 <+131>:	pop    edi
 	   0x080485a2 <+132>:	pop    ebp
-	   0x080
+	   0x080485a3 <+133>:	ret
+	End of assembler dump.
+	(gdb) x/50wx $esp
+		0xbffff5d0:	0xbffff646	0xbffff60c	0x00000000	0xb7fd0ff4
+		0xbff
