@@ -563,4 +563,7 @@ We see changes of buffer in `main`. Let's continue and see `pp` after `strcat` (
 So we come back to `main` with new `EIP`:
 
 	(gdb) disass main
-	Dump 
+	Dump of assembler code for function main:
+	   0x080485a4 <+0>:	push   ebp
+	   0x080485a5 <+1>:	mov    ebp,esp
+	   0
