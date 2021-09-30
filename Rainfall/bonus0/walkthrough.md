@@ -566,4 +566,6 @@ So we come back to `main` with new `EIP`:
 	Dump of assembler code for function main:
 	   0x080485a4 <+0>:	push   ebp
 	   0x080485a5 <+1>:	mov    ebp,esp
-	   0
+	   0x080485a7 <+3>:	and    esp,0xfffffff0
+	   0x080485aa <+6>:	sub    esp,0x40
+	   0x080485ad <+9>:	lea    
