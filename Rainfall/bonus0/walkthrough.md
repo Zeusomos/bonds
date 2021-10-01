@@ -571,4 +571,6 @@ So we come back to `main` with new `EIP`:
 	   0x080485ad <+9>:	lea    eax,[esp+0x16]
 	   0x080485b1 <+13>:	mov    DWORD PTR [esp],eax
 	   0x080485b4 <+16>:	call   0x804851e <pp>
-	=
+	=> 0x080485b9 <+21>:	lea    eax,[esp+0x16]
+	   0x080485bd <+25>:	mov    DWORD PTR [esp],eax
+	   0x080485c0 <+28>:	call
