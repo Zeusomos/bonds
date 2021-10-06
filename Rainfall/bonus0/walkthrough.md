@@ -577,4 +577,7 @@ So we come back to `main` with new `EIP`:
 	   0x080485c5 <+33>:	mov    eax,0x0
 	   0x080485ca <+38>:	leave
 	   0x080485cb <+39>:	ret
-	En
+	End of assembler dump.
+	(gdb) x/20wx $esp
+		0xbffff630:	0xbffff646	0x080498d8	0x00000001	0x0804835d
+		0xbffff640
