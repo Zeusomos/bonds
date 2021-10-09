@@ -588,4 +588,8 @@ So we come back to `main` with new `EIP`:
 		Stack level 0, frame at 0xbffff680:
 		 eip = 0x80485b9 in main; saved eip |0xbffff85f|
 		 Arglist at 0xbffff678, args:
-		 Locals at 0xbffff678, Previous frame's sp is 
+		 Locals at 0xbffff678, Previous frame's sp is 0xbffff680
+		 Saved registers:
+		  ebp at 0xbffff678, eip at 0xbffff67c
+
+I think it is just incred
