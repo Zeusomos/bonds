@@ -10,4 +10,8 @@ void greetuser(char lang[])
  
    if (gloabal_var == 1)
    {
-       strcpy(buff, "Hyvää päivää "); // в коде нет вызова strcp
+       strcpy(buff, "Hyvää päivää "); // в коде нет вызова strcpy там просто mov несколько раз
+   }
+   else if (gloabal_var == 2)
+   {
+       strcpy(buff, "Goedemiddag! "); // 
