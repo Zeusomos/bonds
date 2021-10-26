@@ -24,4 +24,11 @@ void greetuser(char lang[])
    puts(buff);
 }
  
-int main(int arg
+int main(int argc, char **argv)
+{
+   char buff[76];
+   char *lang;
+ 
+   if (argc != 3)
+       return (1);
+   memse
