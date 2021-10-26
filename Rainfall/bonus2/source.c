@@ -18,4 +18,10 @@ void greetuser(char lang[])
    }
    else if (gloabal_var == 0)
    {
-       strcpy(buff, "Hello "); //
+       strcpy(buff, "Hello "); // в коде нет вызова strcpy там просто mov несколько раз
+   }
+   strcat(buff, lang);
+   puts(buff);
+}
+ 
+int main(int arg
