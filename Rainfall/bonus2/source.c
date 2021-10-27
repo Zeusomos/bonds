@@ -40,4 +40,8 @@ int main(int argc, char **argv)
        if (!memcmp(lang, "fi", 2))
            gloabal_var = 1;
        if (!memcmp(lang, "nl", 2))
-          
+           gloabal_var = 2;
+   }
+   greetuser(buff);
+   return (0);
+}
