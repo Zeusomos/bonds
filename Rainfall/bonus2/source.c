@@ -32,4 +32,9 @@ int main(int argc, char **argv)
    if (argc != 3)
        return (1);
    memset(buff, 0, 0x13 * 4); // rep stos заполняет по 4 байта ecx раз, в ecx лежит 0x13
-   strncpy(bu
+   strncpy(buff, argv[1], 0x28); // 40
+   strncpy(buff + 0x28, argv[2], 0x20); // 32
+   lang = getenv("LANG");
+   if (!lang)
+   {
+      
