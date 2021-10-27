@@ -31,4 +31,5 @@ int main(int argc, char **argv)
  
    if (argc != 3)
        return (1);
-   memse
+   memset(buff, 0, 0x13 * 4); // rep stos заполняет по 4 байта ecx раз, в ecx лежит 0x13
+   strncpy(bu
