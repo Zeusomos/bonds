@@ -14,4 +14,8 @@ int				main(int argc, char **argv)
 	if (file != 0 || argc != 2)
 		return (-1);
 	fread(buffer, 1, 66, file);
-	buffer[
+	buffer[65] = '\0';
+	buffer[atoi(argv[1])] = 0;
+	fread(&buffer[66], 1, 65, file);
+	fclose(file);
+	if (strcmp(
