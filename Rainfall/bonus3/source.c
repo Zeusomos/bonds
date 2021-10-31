@@ -9,4 +9,9 @@ int				main(int argc, char **argv)
 	char buffer[132];
 	int	 arg;
 
-	file = fopen("/home/user/end/.
+	file = fopen("/home/user/end/.pass", "r");
+	bzero(buffer, 132);
+	if (file != 0 || argc != 2)
+		return (-1);
+	fread(buffer, 1, 66, file);
+	buffer[
