@@ -18,4 +18,9 @@ int				main(int argc, char **argv)
 	buffer[atoi(argv[1])] = 0;
 	fread(&buffer[66], 1, 65, file);
 	fclose(file);
-	if (strcmp(
+	if (strcmp(buffer, argv[1]) == 0)
+		execl("/bin/sh", "sh", NULL);
+	else
+		puts(&buffer[66]);
+	return 0;
+}
