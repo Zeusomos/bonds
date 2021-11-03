@@ -5,4 +5,4 @@ By objdumping the binary we see a main function:
 
 	bonus3@RainFall:~$ objdump -D -M intel-mnemonic bonus3 > /tmp/dump_bon3
 
-W
+Why do we do objdump first? Maybe in this exercise a function exists but is not used so we need to see all the funct
