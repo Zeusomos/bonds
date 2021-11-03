@@ -9,4 +9,4 @@ Why do we do objdump first? Maybe in this exercise a function exists but is not 
 
 # Exploitation
 
-Here we have work with an argument and opportunity to use shell from the binary if a comparison is right. If we look on the binary and how buffer is filled in, we see that to some part of the buffer that shou
+Here we have work with an argument and opportunity to use shell from the binary if a comparison is right. If we look on the binary and how buffer is filled in, we see that to some part of the buffer that should be result of `atoi` of the first argument we need to put '\0'. And after we will compare the beginning of the b
