@@ -5,4 +5,8 @@ By objdumping the binary we see a main function:
 
 	bonus3@RainFall:~$ objdump -D -M intel-mnemonic bonus3 > /tmp/dump_bon3
 
-Why do we do objdump first? Maybe in this exercise a function exists but is not used so we need to see all the funct
+Why do we do objdump first? Maybe in this exercise a function exists but is not used so we need to see all the functions.
+
+# Exploitation
+
+Here we have work with an argument and opportunity to use shell from the binary if a comparis
