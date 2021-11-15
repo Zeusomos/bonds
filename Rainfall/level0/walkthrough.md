@@ -16,4 +16,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048ecc <+12>:	add    eax,0x4				;some variables
 	   0x08048ecf <+15>:	mov    eax,DWORD PTR [eax]		;getting ready to atoi
 	   0x08048ed1 <+17>:	mov    DWORD PTR [esp],eax		;arguments for atoi
-	   0x0
+	   0x08048ed4 <+20>:	call   0x8049710 <atoi>			;call atoi
+	   0x08048ed9 <+25>:	cmp    eax,0x1a7			;compare variable
