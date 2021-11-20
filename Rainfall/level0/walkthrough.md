@@ -24,4 +24,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048eec <+44>:	mov    DWORD PTR [esp+0x10],eax		;put result of strdup to variable
 	   0x08048ef0 <+48>:	mov    DWORD PTR [esp+0x14],0x0		;put NULL to variable
 	   0x08048ef8 <+56>:	call   0x8054680 <getegid>		;call getegid
-	   0x08048efd <+61>:	mov    DWORD PTR [esp+0x1c],eax		;put result of ge
+	   0x08048efd <+61>:	mov    DWORD PTR [esp+0x1c],eax		;put result of getgid to variable
+	   0x08048f01 <+65>:	call   0x8054670 <geteuid>		;call geteuid
+	   0x08048f06 <+70>:	mov    DWORD PTR [
