@@ -34,4 +34,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048f1a <+90>:	mov    eax,DWORD PTR [esp+0x1c]		;preparation to setresgid
 	   0x08048f1e <+94>:	mov    DWORD PTR [esp],eax		;arguments for setresgid
 	   0x08048f21 <+97>:	call   0x8054700 <setresgid>		;call setresgid
-	   0x08048f26 <+102>:	mov    e
+	   0x08048f26 <+102>:	mov    eax,DWORD PTR [esp+0x18]		;preparation to setresuid
+	   0x08048f2a <+106>:	mov    DWORD PTR [esp+0x8],eax		;a
