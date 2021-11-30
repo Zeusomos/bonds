@@ -50,4 +50,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048f5d <+157>:	mov    edx,eax				;preparation to fwrite
 	   0x08048f5f <+159>:	mov    eax,0x80c5350			;preparation to fwrite
 	   0x08048f64 <+164>:	mov    DWORD PTR [esp+0xc],edx		;arguments for fwrite
-	   0x08048f68 <+168>:	mov    DWORD PTR [esp+0x8
+	   0x08048f68 <+168>:	mov    DWORD PTR [esp+0x8],0x5		;arguments for fwrite
+	   0x08048f70 <+176>:	mov    DWORD PTR [esp+0x4],0x1		;arguments for fwrite
+	   0x08048f78 <+184>:
