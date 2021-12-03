@@ -58,4 +58,7 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048f85 <+197>:	leave
 	   0x08048f86 <+198>:	ret
 
-Let's see some
+Let's see some insites by their addresses:
+
+	(gdb) x/8cb 0x80c5348
+		0x80c5348:	47 '/'	98 'b'	105 'i'	110 'n'	47 '/'	115 's'	104 'h'
