@@ -67,4 +67,6 @@ Let's see some insites by their addresses:
 	(gdb) x/63c 0x80c5350
 		0x80c5350:	78 'N'	111 'o'	32 ' '	33 '!'	10 '\n'	0 '\000'	70 'F'	65 'A'
 		0x80c5358:	84 'T'	65 'A'	76 'L'	58 ':'	32 ' '	107 'k'	101 'e'	114 'r'
-		0x80c5360:	110 'n'	101 'e'	108 'l'	32 ' '	1
+		0x80c5360:	110 'n'	101 'e'	108 'l'	32 ' '	116 't'	111 'o'	111 'o'	32 ' '
+
+Numbers in hex are transferred to decimal with the help of programming calculator and finally
