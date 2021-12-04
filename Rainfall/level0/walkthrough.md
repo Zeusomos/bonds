@@ -61,4 +61,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 Let's see some insites by their addresses:
 
 	(gdb) x/8cb 0x80c5348
-		0x80c5348:	47 '/'	98 'b'	105 'i'	110 'n'	47 '/'	115 's'	104 'h'
+		0x80c5348:	47 '/'	98 'b'	105 'i'	110 'n'	47 '/'	115 's'	104 'h'	0 '\000'
+	(gdb) x/16c 0x80ee170
+		0x80ee170 <stderr>:	-96 '\240'	-25 '\347'	14 '\016'	8 '\b'	64 '@'	-24 '\350'	14 '\016
