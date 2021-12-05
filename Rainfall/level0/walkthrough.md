@@ -73,4 +73,13 @@ Numbers in hex are transferred to decimal with the help of programming calculato
 
 # Exploitation
 
-If `atoi` result equals 423 - we enter conditiol where execv is call
+If `atoi` result equals 423 - we enter conditiol where execv is called. Therefore:
+
+	./level0 423
+
+# Result
+
+	level0@RainFall:~$ ./level0 423
+	$ whoami
+	level1
+	$ ca
