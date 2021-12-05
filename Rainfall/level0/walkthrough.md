@@ -69,4 +69,8 @@ Let's see some insites by their addresses:
 		0x80c5358:	84 'T'	65 'A'	76 'L'	58 ':'	32 ' '	107 'k'	101 'e'	114 'r'
 		0x80c5360:	110 'n'	101 'e'	108 'l'	32 ' '	116 't'	111 'o'	111 'o'	32 ' '
 
-Numbers in hex are transferred to decimal with the help of programming calculator and finally
+Numbers in hex are transferred to decimal with the help of programming calculator and finally we write the code in C.
+
+# Exploitation
+
+If `atoi` result equals 423 - we enter conditiol where execv is call
