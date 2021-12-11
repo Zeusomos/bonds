@@ -6,4 +6,8 @@ int	run(void)
 	system("/bin/sh");
 }
 
-int	mai
+int	main(void)
+{
+	char buffer[64];
+	gets(buffer);
+}
