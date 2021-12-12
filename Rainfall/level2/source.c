@@ -8,4 +8,8 @@ void p(void)
 	void *ptr;
 	
 	fflush(stdout);
-	get
+	gets(buffer);
+	ptr = __builtin_return_address(0);
+	if (((unsigned int)ptr & 0xb0000000) == 0xb0000000)
+	{
+		printf
