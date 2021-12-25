@@ -4,4 +4,13 @@
 
 int o(void)
 {
-	s
+	system("/bin/sh");
+	_exit(1);
+}
+
+int n(void)
+{
+	char buffer[512];
+	
+	fgets(buffer, 512, stdin);
+	printf(b
