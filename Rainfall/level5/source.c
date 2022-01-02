@@ -13,4 +13,11 @@ int n(void)
 	char buffer[512];
 	
 	fgets(buffer, 512, stdin);
-	printf(b
+	printf(buffer);
+	exit(1);
+}
+
+int main(void)
+{
+	n();
+}
