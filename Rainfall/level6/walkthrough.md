@@ -9,4 +9,8 @@ Why do we do objdump first? Maybe in this exercise a function exists but is not 
 
 # Code writing
 
-We start to work with gdb in Intel syntax (set disassem
+We start to work with gdb in Intel syntax (set disassembly-flavor intel):
+
+	(gdb) disass main
+    Dump of assembler code for function main:
+       0x08
