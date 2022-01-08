@@ -15,4 +15,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
     Dump of assembler code for function main:
        0x0804847c <+0>:	push   ebp
        0x0804847d <+1>:	mov    ebp,esp
-       0x0804847f <+3>:	and    esp,0xffff
+       0x0804847f <+3>:	and    esp,0xfffffff0
+       0x08048482 <+6>:	sub    esp,0x20
+       0x08048485 <+9>:	mov    DWORD PTR [esp],0x40 			;argument for ma
