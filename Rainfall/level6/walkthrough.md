@@ -19,4 +19,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
        0x08048482 <+6>:	sub    esp,0x20
        0x08048485 <+9>:	mov    DWORD PTR [esp],0x40 			;argument for malloc
        0x0804848c <+16>:	call   0x8048350 <malloc@plt> 		;call malloc with arguments
-       0
+       0x08048491 <+21>:	mov    DWORD PTR [esp+0x1c],eax 	;result of malloc to some value
+       0x08048495 <+25>:	
