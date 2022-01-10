@@ -21,4 +21,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
        0x0804848c <+16>:	call   0x8048350 <malloc@plt> 		;call malloc with arguments
        0x08048491 <+21>:	mov    DWORD PTR [esp+0x1c],eax 	;result of malloc to some value
        0x08048495 <+25>:	mov    DWORD PTR [esp],0x4  		;argument for malloc
-       0x0804849c <+32>:	call   0x8048350 <malloc@plt>  
+       0x0804849c <+32>:	call   0x8048350 <malloc@plt>   	;call malloc with arguments
+       0x080484a1 <+37>:	mov    DWORD PTR [esp+0x18],eax 	;result of mall
