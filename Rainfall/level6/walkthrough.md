@@ -25,4 +25,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
        0x080484a1 <+37>:	mov    DWORD PTR [esp+0x18],eax 	;result of malloc to some value
        0x080484a5 <+41>:	mov    edx,0x8048468 			;upload the beginning of the m function 
        0x080484aa <+46>:	mov    eax,DWORD PTR [esp+0x18] 	;something with variables, put address of m function to the variable
-       0x080484ae <+50>:	mov    DWORD PTR [eax],edx 		;something with variables, put address of m funct
+       0x080484ae <+50>:	mov    DWORD PTR [eax],edx 		;something with variables, put address of m function to the variable
+       0x080484b0 <+52>:	mov    eax,DWORD PTR [ebp+0xc] 		;something with variables, argv is used
+   
