@@ -38,4 +38,10 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
        0x080484ce <+82>:	mov    eax,DWORD PTR [eax] 		;prepare to call functions that is a variable
        0x080484d0 <+84>:	call   eax 				;call function that lies in a variable
        0x080484d2 <+86>:	leave
-     
+       0x080484d3 <+87>:	ret
+
+Something new!\
+Let's look at the m function:
+
+	(gdb) disass m
+    Dump of assembler cod
