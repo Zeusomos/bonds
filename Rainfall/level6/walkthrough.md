@@ -34,4 +34,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
        0x080484be <+66>:	mov    DWORD PTR [esp+0x4],edx 		;arguments for strcpy
        0x080484c2 <+70>:	mov    DWORD PTR [esp],eax 		;arguments for strcpy
        0x080484c5 <+73>:	call   0x8048340 <strcpy@plt>   	;call strcpy with arguments
-       0x080484ca <+78>:	mov    eax,DWORD PTR [esp+0x18] 	;something with variables, deal with variable that 
+       0x080484ca <+78>:	mov    eax,DWORD PTR [esp+0x18] 	;something with variables, deal with variable that we used before
+       0x080484ce <+82>:	mov    eax,DWORD PTR [eax] 		;prepare to call functions that is a variable
+       0
