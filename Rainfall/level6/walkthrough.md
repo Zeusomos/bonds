@@ -46,4 +46,6 @@ Let's look at the m function:
 	(gdb) disass m
     Dump of assembler code for function m:
        0x08048468 <+0>:	push   ebp
-       0x08048469 <+1>:	mov  
+       0x08048469 <+1>:	mov    ebp,esp
+       0x0804846b <+3>:	sub    esp,0x18
+       0x0804846e <+6>:	mov    DWORD PTR [esp],0x80
