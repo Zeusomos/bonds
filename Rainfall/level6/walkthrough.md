@@ -44,4 +44,6 @@ Something new!\
 Let's look at the m function:
 
 	(gdb) disass m
-    Dump of assembler cod
+    Dump of assembler code for function m:
+       0x08048468 <+0>:	push   ebp
+       0x08048469 <+1>:	mov  
