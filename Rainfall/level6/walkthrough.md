@@ -58,4 +58,6 @@ Let's look at the n function:
 	(gdb) disass n
     Dump of assembler code for function n:
        0x08048454 <+0>:	push   ebp
-       0x08048455 
+       0x08048455 <+1>:	mov    ebp,esp
+       0x08048457 <+3>:	sub    esp,0x18
+       0x0804845a <+6>:	mov    DWORD PTR [esp],0x804
