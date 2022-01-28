@@ -55,4 +55,7 @@ Let's look at the m function:
 
 Let's look at the n function:
 
-	(
+	(gdb) disass n
+    Dump of assembler code for function n:
+       0x08048454 <+0>:	push   ebp
+       0x08048455 
