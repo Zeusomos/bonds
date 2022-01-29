@@ -60,4 +60,6 @@ Let's look at the n function:
        0x08048454 <+0>:	push   ebp
        0x08048455 <+1>:	mov    ebp,esp
        0x08048457 <+3>:	sub    esp,0x18
-       0x0804845a <+6>:	mov    DWORD PTR [esp],0x804
+       0x0804845a <+6>:	mov    DWORD PTR [esp],0x80485b0 		;argument for system
+       0x08048461 <+13>:	call   0x8048370 <system@plt>   	;call system with arguments
+  
