@@ -67,4 +67,8 @@ Let's look at the n function:
 
 Let's see some insites by their addresses:
 
-	Breakpoint
+	Breakpoint 10, 0x080484d0 in main ()
+    (gdb) p/x $eax
+        $5 = 0x8048468
+    (gdb) x/s 0x80485b0
+        $6 
