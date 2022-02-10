@@ -71,4 +71,8 @@ Let's see some insites by their addresses:
     (gdb) p/x $eax
         $5 = 0x8048468
     (gdb) x/s 0x80485b0
-        $6 
+        $6 = "/bin/cat /home/user/level7/.pass"
+    (gdb) x/s 0x80485d1
+        $7 = "Nope"
+
+Here we call an `m` function 
