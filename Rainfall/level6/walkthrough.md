@@ -75,4 +75,11 @@ Let's see some insites by their addresses:
     (gdb) x/s 0x80485d1
         $7 = "Nope"
 
-Here we call an `m` function 
+Here we call an `m` function in the end of `main`.\
+All the strings, arguments and FILE streams are known now.
+
+# Exploitation
+
+If we just start the binary, we have:
+
+    level6@
