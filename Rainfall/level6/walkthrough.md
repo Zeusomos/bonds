@@ -82,4 +82,7 @@ All the strings, arguments and FILE streams are known now.
 
 If we just start the binary, we have:
 
-    level6@
+    level6@RainFall:~$ ./level6 abc
+        Nope
+
+Instead of "Nope" we need to print a token. This we can do if
