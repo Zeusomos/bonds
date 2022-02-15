@@ -85,4 +85,7 @@ If we just start the binary, we have:
     level6@RainFall:~$ ./level6 abc
         Nope
 
-Instead of "Nope" we need to print a token. This we can do if
+Instead of "Nope" we need to print a token. This we can do if we send `n` function instead of the `m` function.\
+Let's see what we have:
+
+    Breakpoint 11, 0x080484c
