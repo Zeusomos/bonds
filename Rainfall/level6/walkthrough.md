@@ -88,4 +88,6 @@ If we just start the binary, we have:
 Instead of "Nope" we need to print a token. This we can do if we send `n` function instead of the `m` function.\
 Let's see what we have:
 
-    Breakpoint 11, 0x080484c
+    Breakpoint 11, 0x080484ca in main ()
+    (gdb) x/20wx $esp+0x18
+        0xbffff6e8:	**0x0804a050**	0x0804a008	0x0
