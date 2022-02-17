@@ -98,4 +98,8 @@ Let's see what we have:
     (gdb) x/wx $esp+0x18
         0xbffff6e8:	0x0804a050
     (gdb) p/x *0x0804a050
-    
+        $9 = 0x8048468
+
+One more time - that is the address of the `m` function.
+
+    Breakpoint 10, 0x08
