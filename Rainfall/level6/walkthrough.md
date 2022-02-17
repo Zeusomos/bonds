@@ -102,4 +102,8 @@ Let's see what we have:
 
 One more time - that is the address of the `m` function.
 
-    Breakpoint 10, 0x08
+    Breakpoint 10, 0x080484d0 in main ()
+    (gdb) p/x $eax
+        $5 = 0x8048468
+
+Let's find argument sent to the `m` function
