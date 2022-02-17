@@ -106,4 +106,7 @@ One more time - that is the address of the `m` function.
     (gdb) p/x $eax
         $5 = 0x8048468
 
-Let's find argument sent to the `m` function
+Let's find argument sent to the `m` function (playing with arguments sent to the binary):
+
+    (gdb) x/wx $esp+0x1c
+        0xbffff6ec:	0x0804a008
