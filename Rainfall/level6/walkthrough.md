@@ -114,4 +114,9 @@ Let's find argument sent to the `m` function (playing with arguments sent to the
         $12 = 1094795585
     (gdb) p/x *0x0804a008
         $13 = 0x41414141
-   
+    (gdb) p/x *0x0804a008
+        $14 = 0x41414141
+
+Here are my 11 Аs
+    
+    (gdb) p/c *(0x0
