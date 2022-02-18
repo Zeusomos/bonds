@@ -119,4 +119,8 @@ Let's find argument sent to the `m` function (playing with arguments sent to the
 
 Here are my 11 Аs
     
-    (gdb) p/c *(0x0
+    (gdb) p/c *(0x0804a008 + 1)
+    $32 = 65 'A'
+    (gdb) p/c *(0x0804a008 + 2)
+    $33 = 65 'A'
+    (gdb) p/c *(0x0804a008 + 3)
