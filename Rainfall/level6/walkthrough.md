@@ -110,3 +110,8 @@ Let's find argument sent to the `m` function (playing with arguments sent to the
 
     (gdb) x/wx $esp+0x1c
         0xbffff6ec:	0x0804a008
+    (gdb) p/s *0x0804a008
+        $12 = 1094795585
+    (gdb) p/x *0x0804a008
+        $13 = 0x41414141
+   
