@@ -139,4 +139,10 @@ Here are my 11 Аs
     $40 = 65 'A'
     (gdb) p/c *(0x0804a008 + 10)
     $41 = 65 'A'
-    (gdb) p/c *(0x0804a008 + 11
+    (gdb) p/c *(0x0804a008 + 11)
+    $42 = 0 '\000'
+
+And that is where call to `m` function lies:
+
+    (gdb) x/10wx 0x0804a008
+        0x804a008:	0x414141
