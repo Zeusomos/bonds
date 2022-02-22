@@ -145,4 +145,6 @@ Here are my 11 Аs
 And that is where call to `m` function lies:
 
     (gdb) x/10wx 0x0804a008
-        0x804a008:	0x414141
+        0x804a008:	0x41414141	0x41414141	0x00414141	0x00000000
+        0x804a018:	0x00000000	0x00000000	0x00000000	0x00000000
+       
