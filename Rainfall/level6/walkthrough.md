@@ -155,4 +155,8 @@ And that is where call to `m` function lies:
         0x804a038:	0x00000000	0x00000000	0x00000000	0x00000000
         0x804a048:	0x00000000	0x00000011	**0x08048468**	0x00000000
 
-That is 72 byte
+That is 72 bytes starting from the buffer beginning:
+
+    (gdb) p/x 0x804a048 + 8
+        $44 = 0x804a050
+    (gdb) p 0x804a050 -
