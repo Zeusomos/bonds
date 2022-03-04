@@ -6,3 +6,13 @@
 char			c[69];
 
 void 			m(void)
+{
+	printf("%s - %d\n", c, (int)time(0));
+}
+
+int				main(int argc, char **argv)
+{
+	int		*first;
+	int		*second;
+
+	first = ma
