@@ -15,4 +15,10 @@ int				main(int argc, char **argv)
 	int		*first;
 	int		*second;
 
-	first = ma
+	first = malloc(8);
+	first[0] = 1;
+	first[1] = *((int *)malloc(8));
+
+	second = malloc(8);
+	second[0] = 2;
+	second[1] = 
