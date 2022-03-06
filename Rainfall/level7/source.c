@@ -21,4 +21,7 @@ int				main(int argc, char **argv)
 
 	second = malloc(8);
 	second[0] = 2;
-	second[1] = 
+	second[1] = *((int *)malloc(8));
+
+	strcpy((char *)first + 1, argv[1]);
+	strcpy((char *)second + 1, arg
