@@ -24,4 +24,10 @@ int main(void)
 		}
 		if (strncmp(buffer, "reset", 5))
 			free(buffer);
-		if (strncmp(buffer, "se
+		if (strncmp(buffer, "service", 6))
+			service = strdup(buffer + 7);
+		if (strncmp(buffer, "login", 5))
+		{
+			if (auth[32])
+				system("/bin/sh");
+		
