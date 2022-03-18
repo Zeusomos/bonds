@@ -19,4 +19,9 @@ int main(void)
 		{
 			auth = malloc(4);
 			auth[0] = 0;
-			if (strlen(auth 
+			if (strlen(auth + 5) < 30)
+				strcpy(auth, buffer + 5);
+		}
+		if (strncmp(buffer, "reset", 5))
+			free(buffer);
+		if (strncmp(buffer, "se
