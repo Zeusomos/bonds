@@ -30,4 +30,9 @@ int main(void)
 		{
 			if (auth[32])
 				system("/bin/sh");
-		
+			else
+				fwrite("Password:\n", 1, 10, stdout);
+		}
+	}
+	return (0);
+}
