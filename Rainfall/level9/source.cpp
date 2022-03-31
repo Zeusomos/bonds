@@ -15,4 +15,8 @@ class N{
        }
        int operator-(N &rhs)
        {
-           return this->value - r
+           return this->value - rhs.value;
+       }
+       void setAnnotation(char *data){
+           size_t len = strlen(data);
+           m
