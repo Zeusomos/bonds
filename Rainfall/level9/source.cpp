@@ -5,4 +5,9 @@ class N{
    public:
        N(int value)
        {
-           this->value
+           this->value = value;
+           func = &N::operator+;
+       }
+       int operator+(N &rhs)
+       {
+           in
