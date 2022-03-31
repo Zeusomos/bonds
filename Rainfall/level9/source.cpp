@@ -10,4 +10,9 @@ class N{
        }
        int operator+(N &rhs)
        {
-           in
+           int a = this->value + rhs.value;
+           return a;
+       }
+       int operator-(N &rhs)
+       {
+           return this->value - r
