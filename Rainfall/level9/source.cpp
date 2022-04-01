@@ -31,4 +31,7 @@ int main(int argc, char **argv)
    if (argc < 2)
        exit(1);
    N *first = new N(5);
-   N *second 
+   N *second = new N(6);
+   first->setAnnotation(argv[1]);
+   (second->*(second->func))(*first);
+   return 0;
