@@ -35,3 +35,4 @@ int main(int argc, char **argv)
    first->setAnnotation(argv[1]);
    (second->*(second->func))(*first);
    return 0;
+}
