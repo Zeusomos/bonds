@@ -23,4 +23,12 @@ class N{
        }
        int (N::*func)(N &);
        char data[100];
-       int val
+       int value;
+};
+ 
+int main(int argc, char **argv)
+{
+   if (argc < 2)
+       exit(1);
+   N *first = new N(5);
+   N *second 
