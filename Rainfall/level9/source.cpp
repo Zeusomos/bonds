@@ -19,4 +19,8 @@ class N{
        }
        void setAnnotation(char *data){
            size_t len = strlen(data);
-           m
+           memcpy(this->data, data, len);
+       }
+       int (N::*func)(N &);
+       char data[100];
+       int val
