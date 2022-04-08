@@ -14,4 +14,7 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	(gdb) disass main
 	Dump of assembler code for function main:
 	   0x080485f4 <+0>:	push   ebp
-	   0x080485f5 <+1>:	
+	   0x080485f5 <+1>:	mov    ebp,esp
+	   0x080485f7 <+3>:	push   ebx
+	   0x080485f8 <+4>:	and    esp,0xfffffff0
+	   0x080485fb <+7>:	su
