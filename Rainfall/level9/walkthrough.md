@@ -19,4 +19,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x080485f8 <+4>:	and    esp,0xfffffff0
 	   0x080485fb <+7>:	sub    esp,0x20
 	   0x080485fe <+10>:	cmp    DWORD PTR [ebp+0x8],0x1			;check arguments
-	   0x08048602 <+
+	   0x08048602 <+14>:	jg     0x8048610 <main+28>			;jump if not according to condition (first operand is more than second operand)
+	   0x080
