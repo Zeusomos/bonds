@@ -17,4 +17,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x080485f5 <+1>:	mov    ebp,esp
 	   0x080485f7 <+3>:	push   ebx
 	   0x080485f8 <+4>:	and    esp,0xfffffff0
-	   0x080485fb <+7>:	su
+	   0x080485fb <+7>:	sub    esp,0x20
+	   0x080485fe <+10>:	cmp    DWORD PTR [ebp+0x8],0x1			;check arguments
+	   0x08048602 <+
