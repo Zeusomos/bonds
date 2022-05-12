@@ -21,4 +21,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x080485fe <+10>:	cmp    DWORD PTR [ebp+0x8],0x1			;check arguments
 	   0x08048602 <+14>:	jg     0x8048610 <main+28>			;jump if not according to condition (first operand is more than second operand)
 	   0x08048604 <+16>:	mov    DWORD PTR [esp],0x1			;argument for exit
-	   0x0804860b <+23>:	call   0x80484f0 
+	   0x0804860b <+23>:	call   0x80484f0 <_exit@plt>			;call exit
+	   0x08048610 <+28>:	mov    DWORD PTR [esp],0x6c			;preparation to calling the class
+	  
