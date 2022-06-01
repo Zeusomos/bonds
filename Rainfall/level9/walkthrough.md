@@ -31,4 +31,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x0804862e <+58>:	mov    DWORD PTR [esp+0x1c],ebx			;result to the variable
 	   0x08048632 <+62>:	mov    DWORD PTR [esp],0x6c			;preparation to calling the class
 	   0x08048639 <+69>:	call   0x8048530 <_Znwj@plt>			;calling the class
-	
+	   0x0804863e <+74>:	mov    ebx,eax					;preparations to calling the method
+	   0x08048640 <+76>:	mov    DWORD PTR [esp+0x4],0x6			;argument for calling the method
+	   0x08048648 <+84>:	mov    DWORD PTR [esp],ebx			;prep
