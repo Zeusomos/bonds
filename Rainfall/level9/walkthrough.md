@@ -38,4 +38,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048650 <+92>:	mov    DWORD PTR [esp+0x18],ebx			;result to the variable
 	   0x08048654 <+96>:	mov    eax,DWORD PTR [esp+0x1c]			;dealing with variable where we put result with 5
 	   0x08048658 <+100>:	mov    DWORD PTR [esp+0x14],eax			;put variable to stack
-	   0x0804865c <+104>:	mov    eax,DWORD PTR [esp+0x18]			;dealing wi
+	   0x0804865c <+104>:	mov    eax,DWORD PTR [esp+0x18]			;dealing with variable where we put result with 6
+	   0x08048660 <+108>:	mov    DWORD PTR [esp+0x10],eax			;put variable to stack
+	   0
