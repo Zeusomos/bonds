@@ -40,4 +40,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048658 <+100>:	mov    DWORD PTR [esp+0x14],eax			;put variable to stack
 	   0x0804865c <+104>:	mov    eax,DWORD PTR [esp+0x18]			;dealing with variable where we put result with 6
 	   0x08048660 <+108>:	mov    DWORD PTR [esp+0x10],eax			;put variable to stack
-	   0
+	   0x08048664 <+112>:	mov    eax,DWORD PTR [ebp+0xc]			;taking the argument array
+	   0x08048667 <+115
