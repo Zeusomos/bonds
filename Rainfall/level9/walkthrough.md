@@ -45,4 +45,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x0804866a <+118>:	mov    eax,DWORD PTR [eax]			;preparing arguments for the method setAnnotation
 	   0x0804866c <+120>:	mov    DWORD PTR [esp+0x4],eax			;preparing arguments for the method setAnnotation
 	   0x08048670 <+124>:	mov    eax,DWORD PTR [esp+0x14]			;preparing arguments for the method setAnnotation
-	   0x08048674 <+128>:	mov    DWORD PTR [esp],eax			;prepari
+	   0x08048674 <+128>:	mov    DWORD PTR [esp],eax			;preparing arguments for the method setAnnotation
+	   0x08048677 <+131>:	call   0x804870e <_ZN1N13setAnnotationEPc>	;call
