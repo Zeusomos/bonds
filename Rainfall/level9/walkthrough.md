@@ -51,4 +51,5 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048680 <+140>:	mov    eax,DWORD PTR [eax]			;dereferencing pointer
 	   0x08048682 <+142>:	mov    edx,DWORD PTR [eax]			;dereferencing pointer
 	   0x08048684 <+144>:	mov    eax,DWORD PTR [esp+0x14]			;dealing with variable where we put result with 5
-	   0x08048688 <+148>:	mov    DWORD PTR [
+	   0x08048688 <+148>:	mov    DWORD PTR [esp+0x4],eax			;preparation for calling the function
+	   0x0804868c <+152>:	mov    eax,DWORD PT
