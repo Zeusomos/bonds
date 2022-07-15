@@ -55,4 +55,7 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x0804868c <+152>:	mov    eax,DWORD PTR [esp+0x10]			;preparation for calling the function
 	   0x08048690 <+156>:	mov    DWORD PTR [esp],eax			;preparation for calling the function
 	   0x08048693 <+159>:	call   edx					;calling function from class
-	   0x08048695 <+
+	   0x08048695 <+161>:	mov    ebx,DWORD PTR [ebp-0x4]
+	   0x08048698 <+164>:	leave
+	   0x08048699 <+165>:	ret
+	End of as
