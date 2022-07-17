@@ -58,4 +58,8 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 	   0x08048695 <+161>:	mov    ebx,DWORD PTR [ebp-0x4]
 	   0x08048698 <+164>:	leave
 	   0x08048699 <+165>:	ret
-	End of as
+	End of assembler dump.
+
+Plus we need to see what is inside the classes (we saw them in dump from objdump):
+
+	(gdb) disass _ZN1NC2Ei
