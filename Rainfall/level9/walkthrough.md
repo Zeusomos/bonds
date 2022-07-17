@@ -63,3 +63,6 @@ We start to work with gdb in Intel syntax (set disassembly-flavor intel):
 Plus we need to see what is inside the classes (we saw them in dump from objdump):
 
 	(gdb) disass _ZN1NC2Ei
+	Dump of assembler code for function _ZN1NC2Ei:
+	   0x080486f6 <+0>:	push   ebp
+	   0x080486f7 <+1>:	mov 
