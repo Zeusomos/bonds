@@ -70,4 +70,8 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x080486fc <+6>:	mov    DWORD PTR [eax],0x8048848		;address to the other method
 	   0x08048702 <+12>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to the method
 	   0x08048705 <+15>:	mov    edx,DWORD PTR [ebp+0xc]			;dealing with something from the class
-	   0x08048708 <+18>:	mov    DWORD PTR [eax+0x68],edx			;result of somet
+	   0x08048708 <+18>:	mov    DWORD PTR [eax+0x68],edx			;result of something from the class
+	   0x0804870b <+21>:	pop    ebp
+	   0x0804870c <+22>:	ret
+	End of assembler dump.
+	(gdb) disass _ZN1N13setAnnot
