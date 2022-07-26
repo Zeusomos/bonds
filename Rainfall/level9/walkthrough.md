@@ -66,4 +66,6 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	Dump of assembler code for function _ZN1NC2Ei:
 	   0x080486f6 <+0>:	push   ebp
 	   0x080486f7 <+1>:	mov    ebp,esp
-	   0x080486f9 <+3>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to the me
+	   0x080486f9 <+3>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to the method
+	   0x080486fc <+6>:	mov    DWORD PTR [eax],0x8048848		;address to the other method
+	   0x08048702 <+12>:	mov    eax,DWORD 
