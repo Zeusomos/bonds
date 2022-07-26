@@ -80,4 +80,6 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x0804870f <+1>:	mov    ebp,esp
 	   0x08048711 <+3>:	sub    esp,0x18
 	   0x08048714 <+6>:	mov    eax,DWORD PTR [ebp+0xc]			;preparation to strlen, argument to the method
-	   0x08048717 <+9>:	mov    DWORD PTR [esp]
+	   0x08048717 <+9>:	mov    DWORD PTR [esp],eax			;preparation to strlen
+	   0x0804871a <+12>:	call   0x8048520 <strlen@plt>			;call strlen
+	   0x0804871f <+17>:	m
