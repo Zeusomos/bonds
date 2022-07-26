@@ -68,4 +68,5 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x080486f7 <+1>:	mov    ebp,esp
 	   0x080486f9 <+3>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to the method
 	   0x080486fc <+6>:	mov    DWORD PTR [eax],0x8048848		;address to the other method
-	   0x08048702 <+12>:	mov    eax,DWORD 
+	   0x08048702 <+12>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to the method
+	   0x08048705 <+15>:	mov    edx,DWORD PTR [ebp+0xc]		
