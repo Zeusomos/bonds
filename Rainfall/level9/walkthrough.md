@@ -76,4 +76,7 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	End of assembler dump.
 	(gdb) disass _ZN1N13setAnnotationEPc
 	Dump of assembler code for function _ZN1N13setAnnotationEPc:
-	   0x0804870e <+0>:	
+	   0x0804870e <+0>:	push   ebp
+	   0x0804870f <+1>:	mov    ebp,esp
+	   0x08048711 <+3>:	sub    esp,0x18
+	   0x08048714 <+6>:	mov    e
