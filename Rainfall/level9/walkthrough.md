@@ -93,4 +93,7 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x08048739 <+43>:	ret
 	End of assembler dump.
 	(gdb) disass _ZN1NplERS_
-	Dump of assembler code for function
+	Dump of assembler code for function _ZN1NplERS_:
+	   0x0804873a <+0>:	push   ebp
+	   0x0804873b <+1>:	mov    ebp,esp
+	   0x0804873d <+3>:
