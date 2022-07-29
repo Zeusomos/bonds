@@ -89,4 +89,8 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x0804872c <+30>:	mov    DWORD PTR [esp+0x4],eax			;preparations to memcpy
 	   0x08048730 <+34>:	mov    DWORD PTR [esp],edx			;preparations to memcpy
 	   0x08048733 <+37>:	call   0x8048510 <memcpy@plt>			;call memcpy
-	   0x08048738 <+42>:	lea
+	   0x08048738 <+42>:	leave
+	   0x08048739 <+43>:	ret
+	End of assembler dump.
+	(gdb) disass _ZN1NplERS_
+	Dump of assembler code for function
