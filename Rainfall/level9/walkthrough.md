@@ -85,3 +85,5 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x0804871f <+17>:	mov    edx,DWORD PTR [ebp+0x8]			;result of strlen
 	   0x08048722 <+20>:	add    edx,0x4					;shift 4 bytes in buffer 
 	   0x08048725 <+23>:	mov    DWORD PTR [esp+0x8],eax			;preparations to memcpy
+	   0x08048729 <+27>:	mov    eax,DWORD PTR [ebp+0xc]			;preparations to memcpy
+	   0x0804872c <+30>:	mov    DWO
