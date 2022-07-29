@@ -96,4 +96,5 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	Dump of assembler code for function _ZN1NplERS_:
 	   0x0804873a <+0>:	push   ebp
 	   0x0804873b <+1>:	mov    ebp,esp
-	   0x0804873d <+3>:
+	   0x0804873d <+3>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to method
+	   0x08048740 <+6>:	mov  
