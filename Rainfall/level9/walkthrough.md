@@ -103,4 +103,8 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x08048749 <+15>:	add    eax,edx					;the main action
 	   0x0804874b <+17>:	pop    ebp
 	   0x0804874c <+18>:	ret
-	End of assembler dum
+	End of assembler dump.
+	(gdb) disass _ZN1NmiERS_
+	Dump of assembler code for function _ZN1NmiERS_:
+	   0x0804874e <+0>:	push   ebp
+	   0x0804874f
