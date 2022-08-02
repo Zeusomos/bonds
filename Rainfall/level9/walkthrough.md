@@ -100,4 +100,7 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x08048740 <+6>:	mov    edx,DWORD PTR [eax+0x68]			;dealing with what we add to the value inside the method
 	   0x08048743 <+9>:	mov    eax,DWORD PTR [ebp+0xc]			;dealing with argument to method
 	   0x08048746 <+12>:	mov    eax,DWORD PTR [eax+0x68]			;dealing with argument to method
-	   0x08048749 <+15>:	add    eax,edx					
+	   0x08048749 <+15>:	add    eax,edx					;the main action
+	   0x0804874b <+17>:	pop    ebp
+	   0x0804874c <+18>:	ret
+	End of assembler dum
