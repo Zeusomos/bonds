@@ -107,4 +107,5 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	(gdb) disass _ZN1NmiERS_
 	Dump of assembler code for function _ZN1NmiERS_:
 	   0x0804874e <+0>:	push   ebp
-	   0x0804874f
+	   0x0804874f <+1>:	mov    ebp,esp
+	   0x08048751 <+3>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to m
