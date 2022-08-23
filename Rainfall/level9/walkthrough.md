@@ -110,4 +110,5 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x0804874f <+1>:	mov    ebp,esp
 	   0x08048751 <+3>:	mov    eax,DWORD PTR [ebp+0x8]			;dealing with argument to method
 	   0x08048754 <+6>:	mov    edx,DWORD PTR [eax+0x68]			;dealing with what we substract from the value inside the method
-	
+	   0x08048757 <+9>:	mov    eax,DWORD PTR [ebp+0xc]			;dealing with argument to method
+	   0x0804875a <+12>:	mov    
