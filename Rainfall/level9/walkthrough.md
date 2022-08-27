@@ -125,4 +125,8 @@ Let's transfer numbers from hex to decimal in methods and see what is inside the
 		$2 = 104
 		(gdb) p 0x8
 		$3 = 8
-		(
+		(gdb) p 0xc
+		$4 = 12
+	(gdb) x/wx 0x8048848
+		0x8048848 <_ZTV1N+8>:	0x0804873a
+		(gdb
