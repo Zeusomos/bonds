@@ -114,4 +114,9 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x0804875a <+12>:	mov    eax,DWORD PTR [eax+0x68]			;dealing with argument to method
 	   0x0804875d <+15>:	mov    ecx,edx					;the main action
 	   0x0804875f <+17>:	sub    ecx,eax					;the main action
-	   0x08048761 <+19>:	mov    eax,ecx					;the main ac
+	   0x08048761 <+19>:	mov    eax,ecx					;the main action
+	   0x08048763 <+21>:	pop    ebp
+	   0x08048764 <+22>:	ret
+	End of assembler dump.
+
+Let's transfer numb
