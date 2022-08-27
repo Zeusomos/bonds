@@ -119,4 +119,10 @@ Plus we need to see what is inside the classes (we saw them in dump from objdump
 	   0x08048764 <+22>:	ret
 	End of assembler dump.
 
-Let's transfer numb
+Let's transfer numbers from hex to decimal in methods and see what is inside the adresses:
+
+	(gdb) p 0x68
+		$2 = 104
+		(gdb) p 0x8
+		$3 = 8
+		(
