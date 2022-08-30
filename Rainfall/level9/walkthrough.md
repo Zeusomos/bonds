@@ -129,4 +129,7 @@ Let's transfer numbers from hex to decimal in methods and see what is inside the
 		$4 = 12
 	(gdb) x/wx 0x8048848
 		0x8048848 <_ZTV1N+8>:	0x0804873a
-		(gdb
+		(gdb) x/wx 0x0804873a
+		0x804873a <_ZN1NplERS_>:	0x8be58955
+
+So from one method we call some other one not direc
