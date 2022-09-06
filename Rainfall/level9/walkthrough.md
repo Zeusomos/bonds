@@ -136,4 +136,4 @@ So from one method we call some other one not directly but through the table. Fi
 
 # Exploitation
 
-Explotation is done because of de
+Explotation is done because of dereferencing and how data (strings and numbers lie in the class). We can overwrite values and insert shellco
