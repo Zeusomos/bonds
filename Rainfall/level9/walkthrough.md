@@ -132,4 +132,8 @@ Let's transfer numbers from hex to decimal in methods and see what is inside the
 		(gdb) x/wx 0x0804873a
 		0x804873a <_ZN1NplERS_>:	0x8be58955
 
-So from one method we call some other one not direc
+So from one method we call some other one not directly but through the table. Finally we write the code in C++.
+
+# Exploitation
+
+Explotation is done because of de
