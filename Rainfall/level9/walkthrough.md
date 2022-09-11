@@ -136,4 +136,4 @@ So from one method we call some other one not directly but through the table. Fi
 
 # Exploitation
 
-Explotation is done because of dereferencing and how data (strings and numbers lie in the class). We can overwrite values and insert shellco
+Explotation is done because of dereferencing and how data (strings and numbers lie in the class). We can overwrite values and insert shellcode with the help of `memcpy` in setAnnotation method. Why do we need shellcode? Inside this level we do not see any cal
