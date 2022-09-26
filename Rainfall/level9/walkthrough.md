@@ -136,4 +136,6 @@ So from one method we call some other one not directly but through the table. Fi
 
 # Exploitation
 
-Explotation is done because of dereferencing and how data (strings and numbers lie in the class). We can overwrite values and insert shellcode with the help of `memcpy` in setAnnotation method. Why do we need shellcode? Inside this level we do not see any calls of `system` or `execve` and we need to get control of the terminal under user bonus0. So we need to insert shellc
+Explotation is done because of dereferencing and how data (strings and numbers lie in the class). We can overwrite values and insert shellcode with the help of `memcpy` in setAnnotation method. Why do we need shellcode? Inside this level we do not see any calls of `system` or `execve` and we need to get control of the terminal under user bonus0. So we need to insert shellcode as a spoiled pillow to some place in the code. What shellcode for linux x86 we will use:
+
+	\x31\xc0\x50\x68\x
