@@ -159,4 +159,4 @@ What does it mean:
 	 804807a: cd 80                 int    $0x80	;restart_syscall()
 
 Shellcode length is 28 bytes that is very important because we need to count where to put it so that it is executed and does not break the programm.
-We count w
+We count where to put the shellcode while counting `EIP` offset. This we can do with the help of special strings: htt
