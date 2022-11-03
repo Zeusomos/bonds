@@ -163,4 +163,6 @@ We count where to put the shellcode while counting `EIP` offset. This we can do 
 
 	Breakpoint 6, 0x08048677 in main ()
 	(gdb) x/50wx $ebp+0xc
-		0xbffff644:	0xbffff6d4	0xbffff6e0
+		0xbffff644:	0xbffff6d4	0xbffff6e0	0xb7fdc860	0x00000000
+	(gdb) x/50wx 0xbffff6d4
+		0xbffff6d4:	0xbffff7f9	0xbffff812	0x00000000	0xbfff
