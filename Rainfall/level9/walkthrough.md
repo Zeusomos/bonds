@@ -191,4 +191,6 @@ We count where to put the shellcode while counting `EIP` offset. This we can do 
 		0xbffff949:	0x73723d53	0x643a303d	0x31303d69	0x3a34333b
 		0xbffff959:	0x303d6e6c	0x36333b31	0x3d686d3a	0x703a3030
 		0xbffff969:	0x30343d69	0x3a33333b	0x303d6f73	0x35333b31
-		0xbffff979:	0x3d6f643
+		0xbffff979:	0x3d6f643a	0x333b3130	0x64623a35	0x3b30343d
+
+Here lies our argument before the method `setAnnotation`. Let's continue and g
