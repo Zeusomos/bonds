@@ -195,4 +195,7 @@ We count where to put the shellcode while counting `EIP` offset. This we can do 
 
 Here lies our argument before the method `setAnnotation`. Let's continue and go inside `setAnnotation` with our generated string as an argument:
 
-	Breakpoint 9, 0x08048733 in N
+	Breakpoint 9, 0x08048733 in N::setAnnotation(char*) ()
+	(gdb) info frame
+		Stack level 0, frame at 0xbffff610:
+		 eip = 0x8048733 in N::setAnn
