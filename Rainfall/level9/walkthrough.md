@@ -198,4 +198,7 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 	Breakpoint 9, 0x08048733 in N::setAnnotation(char*) ()
 	(gdb) info frame
 		Stack level 0, frame at 0xbffff610:
-		 eip = 0x8048733 in N::setAnn
+		 eip = 0x8048733 in N::setAnnotation(char*); saved eip *0x804867c*
+		 called by frame at 0xbffff640
+		 Arglist at 0xbffff608, args:
+		 Lo
