@@ -204,4 +204,6 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 		 Locals at 0xbffff608, Previous frame's sp is 0xbffff610
 		 Saved registers:
 		  ebp at 0xbffff608, eip at 0xbffff60c
-	(gdb) x
+	(gdb) x/100wx $esp
+		0xbffff5f0:	**0x0804a00c**	|0xbffff812|	0x000000c8	0xb7f9b600
+		0xbffff600:	0x0804a008	0x00000000	0xbffff638	*0x0804
