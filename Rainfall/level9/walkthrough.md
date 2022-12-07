@@ -201,4 +201,7 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 		 eip = 0x8048733 in N::setAnnotation(char*); saved eip *0x804867c*
 		 called by frame at 0xbffff640
 		 Arglist at 0xbffff608, args:
-		 Lo
+		 Locals at 0xbffff608, Previous frame's sp is 0xbffff610
+		 Saved registers:
+		  ebp at 0xbffff608, eip at 0xbffff60c
+	(gdb) x
