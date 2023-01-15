@@ -250,4 +250,6 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 	Breakpoint 10, 0x08048738 in N::setAnnotation(char*) ()
 	(gdb) x/100wx $esp
 		0xbffff5f0:	**0x0804a00c**	|0xbffff812|	0x000000c8	0xb7f9b600
-		0xbffff600:	0x0804a008	0x00000000	0xbf
+		0xbffff600:	0x0804a008	0x00000000	0xbffff638	0x0804867c
+	(gdb) x/100wx **0x0804a00c**
+		0x804a00c:	0x41306141	0x61413161	0x33614132	0x413461
