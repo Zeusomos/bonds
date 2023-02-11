@@ -288,4 +288,6 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 		0xbffff942:	0x4f435f53	0x53524f4c	0x3d73723d	0x69643a30
 	Breakpoint 10, 0x08048738 in N::setAnnotation(char*) ()
 	(gdb) x/20wx 0x0804a008
-		0x804a008:	0x08048848	
+		0x804a008:	0x08048848	0x41306141	0x61413161	0x33614132
+		0x804a018:	0x41346141	0x61413561	0x37614136	0x41386141
+		0x804a028:	0
