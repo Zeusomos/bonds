@@ -301,4 +301,6 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 		0x804a03c:	0x41366241	0x62413762	0x39624138	0x41306341
 		0x804a04c:	0x63413163	0x33634132	0x41346341	0x63413563
 	(gdb) x/20wx $eax
-		0x41366441
+		0x41366441:	Cannot access memory at address 0x41366441
+
+This means that we rewrite the function that needs to be cal
