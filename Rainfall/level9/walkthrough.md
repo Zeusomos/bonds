@@ -303,4 +303,5 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 	(gdb) x/20wx $eax
 		0x41366441:	Cannot access memory at address 0x41366441
 
-This means that we rewrite the function that needs to be called after dereferencing but it can not be because with generated string there is no address where `EIP` can jump to perform an action
+This means that we rewrite the function that needs to be called after dereferencing but it can not be because with generated string there is no address where `EIP` can jump to perform an action. Here we need to put the shellcode.\
+What else do we have: by address `0x0804a008` lies function and there are
