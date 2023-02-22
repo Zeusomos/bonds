@@ -306,4 +306,6 @@ Here lies our argument before the method `setAnnotation`. Let's continue and go 
 This means that we rewrite the function that needs to be called after dereferencing but it can not be because with generated string there is no address where `EIP` can jump to perform an action. Here we need to put the shellcode.\
 What else do we have: by address `0x0804a008` lies function and there are 3 jumps to method `_ZN1NplERS_` from its address. Than starts the buffer. We can start our exploit from 4th byte of the buffer from address `0x804a010` that is \x10\xa0\x04\x08 in little-endian (because in `_ZN1N13setAnnotationEPc` there is jump to the 4th byte of the buffer). So we have 108 bytes for our action where:
 * 4 bytes for address in the buffer
-* 28 b
+* 28 bytes for the shellcode
+* rubbish for alignment that is 108 - 4 - 28 = 76 bytes
+* address of the array beginnin
