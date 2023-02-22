@@ -308,4 +308,7 @@ What else do we have: by address `0x0804a008` lies function and there are 3 jump
 * 4 bytes for address in the buffer
 * 28 bytes for the shellcode
 * rubbish for alignment that is 108 - 4 - 28 = 76 bytes
-* address of the array beginnin
+* address of the array beginning (so that address of shellcode is there and is dereferenced)
+
+As for values:
+* \x10\xa0\x04\x08 - from 4th byte of the
